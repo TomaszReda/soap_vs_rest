@@ -7,5 +7,5 @@ import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.ActivationUserTo
 import java.util.UUID;
 
 @RepositoryRestResource
-public interface ActivationUserTokenRepository  extends JpaRepository<ActivationUserTokenRepository,Long> {
+public interface ActivationUserTokenRepository  extends JpaRepository<ActivationUserToken,Long> {
 }
