@@ -39,8 +39,6 @@ test {
 def webappDir = "$projectDir/src/main/webapp"
 def execTempDir = "./src/main/resources/static/"
 
-
-
 bootJar {
     dependsOn "buildAngular"
 }
