@@ -7,5 +7,4 @@ import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.email.EmailTemplateTy
 
 @RepositoryRestResource
 public interface EmailTemplateRepository extends JpaRepository<EmailTemplate, EmailTemplateType> {
-
 }

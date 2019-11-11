@@ -13,13 +13,4 @@ import java.util.UUID;
 @RepositoryRestResource
 public interface UserRepository extends JpaRepository<User, UUID> {
 
-    User findUserByEmail(String email);
-
-    User findAllByUserMenager(UserMenager userMenager);
-
-    Page<User> findAllByEmailContains(String word,Pageable pageable);
-
-    User findUserByResetPasswordToken(UUID uuid);
-
-    User findByUserCasual(UserCasual userCasual);
 }

@@ -3,8 +3,8 @@ package pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.message;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import pl.tomekreda.library.model.task.TaskForUser;
-import pl.tomekreda.library.model.user.User;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.task.TaskForUser;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.User;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -23,7 +23,7 @@ public class MessageToCasualUser extends Message {
     @OneToOne(cascade = CascadeType.ALL)
     private TaskForUser taskForUser;
 
-    public MessageToCasualUser(String content, String title, User user, TaskForUser taskForUser,MessageDisplay messageDisplay) {
+    public MessageToCasualUser(String content, String title, User user, TaskForUser taskForUser, MessageDisplay messageDisplay) {
         super(content, title,messageDisplay);
         this.user = user;
         this.taskForUser = taskForUser;

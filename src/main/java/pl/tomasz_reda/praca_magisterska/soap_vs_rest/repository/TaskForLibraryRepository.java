@@ -12,6 +12,5 @@ import java.util.UUID;
 @RepositoryRestResource
 public interface TaskForLibraryRepository extends JpaRepository<TaskForLibrary, UUID> {
 
-    TaskForLibrary findByBookAndTaskStatus(Book book, TaskStatus taskStatus);
 
 }

@@ -12,7 +12,4 @@ import java.util.UUID;
 @RepositoryRestResource
 public interface MessageToCasualUserRepository extends JpaRepository<MessageToCasualUser, UUID> {
 
-    List<MessageToCasualUser> findAllByUserAndDateReadIsNullOrderByDataCreateDesc(User user);
-
-    List<MessageToCasualUser> findAllByDateReadIsNull();
 }

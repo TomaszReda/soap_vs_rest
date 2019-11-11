@@ -9,5 +9,4 @@ import java.util.UUID;
 @RepositoryRestResource
 public interface ResetPasswordTokenRepository extends JpaRepository<ResetPasswordToken, Long> {
 
-   ResetPasswordToken findByResetToken(UUID resetToken);
 }

@@ -13,6 +13,4 @@ import java.util.UUID;
 
 @RepositoryRestResource
 public interface LibraryRepository extends JpaRepository<Library, UUID> {
-    Page<Library> findAllByNameContains(String name, Pageable pageable);
-    List<Library> findAllByUserMenager(UserMenager userMenager);
 }

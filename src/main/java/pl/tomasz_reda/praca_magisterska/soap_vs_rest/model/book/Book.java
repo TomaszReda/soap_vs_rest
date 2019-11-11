@@ -3,10 +3,10 @@ package pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.book;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-import pl.tomekreda.library.model.library.Library;
-import pl.tomekreda.library.model.task.Task;
-import pl.tomekreda.library.model.user.UserCasual;
-import pl.tomekreda.library.model.user.UserMenager;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.library.Library;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.task.Task;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.UserCasual;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.UserMenager;
 
 import javax.persistence.*;
 import java.time.LocalDate;

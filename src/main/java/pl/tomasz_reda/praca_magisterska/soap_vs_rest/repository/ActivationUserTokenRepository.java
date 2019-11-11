@@ -8,5 +8,4 @@ import java.util.UUID;
 
 @RepositoryRestResource
 public interface ActivationUserTokenRepository  extends JpaRepository<ActivationUserTokenRepository,Long> {
-    ActivationUserToken findByActiveToken(UUID activationToken);
 }
