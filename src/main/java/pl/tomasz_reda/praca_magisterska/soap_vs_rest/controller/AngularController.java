@@ -18,4 +18,10 @@ public class AngularController {
     public String page(Model model) {
         return page();
     }
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        System.err.println("aaaaa");
+        return page();
+    }
 }
