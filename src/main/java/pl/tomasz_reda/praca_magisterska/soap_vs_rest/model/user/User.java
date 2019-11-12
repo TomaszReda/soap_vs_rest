@@ -44,16 +44,18 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     private UserCasual userCasual;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<UserRoles> userRoles ;
+    @OneToOne
+    private UserRoles userRoles ;
 
 
-
-
-
-
-
-
-
+    public User(String firstname, String lastname, String email, int phoneNumber, String password, UserMenager userMenager, UserCasual userCasual, UserRoles userRoles) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.userMenager = userMenager;
+        this.userCasual = userCasual;
+        this.userRoles = userRoles;
+    }
 }
