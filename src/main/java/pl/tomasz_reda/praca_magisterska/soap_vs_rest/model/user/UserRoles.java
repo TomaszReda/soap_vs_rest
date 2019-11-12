@@ -24,21 +24,6 @@ public class UserRoles implements Serializable {
     @Enumerated(EnumType.STRING)
     private UserRoleEnum userRole;
 
-    public UserRoles(UserRoleEnum userRole) {
-        this.userRole = userRole;
-    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UserRoles userRoles = (UserRoles) o;
-        return userRole == userRoles.userRole;
-    }
 
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(userRole);
-    }
 }

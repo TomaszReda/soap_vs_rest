@@ -20,10 +20,6 @@ public class BookCategory {
 
     private String categoryType;
 
-    public BookCategory(String categoryType) {
-        this.categoryType = categoryType;
-    }
-
     @OneToMany(mappedBy = "bookCategory", cascade = CascadeType.ALL)
     private List<Book> bookList = new ArrayList<>();
 }

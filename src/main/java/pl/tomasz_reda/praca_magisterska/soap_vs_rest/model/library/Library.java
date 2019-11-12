@@ -4,8 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.book.Book;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.message.MessageToLibraryOwner;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.task.Task;
+
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.UserMenager;
 
 
@@ -43,36 +42,8 @@ public class Library {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Book> bookList=new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "library")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private List<Task> taskForLibrary;
-
-
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private UserMenager userMenager;
 
-    @OneToMany(mappedBy = "library",cascade = CascadeType.ALL)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private List<MessageToLibraryOwner> messageToLibraryOwners = new ArrayList<>();
-
-
-
-
-
-    @Override
-    public String toString() {
-        return "Library{" +
-                ", city='" + city + '\'' +
-                ", email='" + email + '\'' +
-                ", latitude='" + latitude + '\'' +
-                ", local='" + local + '\'' +
-                ", longitude='" + longitude + '\'' +
-                ", name='" + name + '\'' +
-                ", number='" + number + '\'' +
-                ", postalCode='" + postalCode + '\'' +
-                ", street='" + street + '\'' +
-                ", userMenager=" + userMenager +
-                '}';
-    }
 }

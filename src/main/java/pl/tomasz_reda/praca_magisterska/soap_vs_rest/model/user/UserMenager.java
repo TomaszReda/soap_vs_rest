@@ -26,18 +26,8 @@ public class UserMenager {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Library> libraryList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "userMenager", cascade = CascadeType.ALL)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private List<Book> bookList = new ArrayList<>();
 
 
-
-    @Override
-    public String toString() {
-        return "UserMenager{" +
-                "id=" + id +
-                '}';
-    }
 }
 
 

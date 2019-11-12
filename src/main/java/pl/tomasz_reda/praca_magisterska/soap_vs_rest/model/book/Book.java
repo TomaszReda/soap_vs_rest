@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.library.Library;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.task.Task;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.UserCasual;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.UserMenager;
 
@@ -19,7 +18,6 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 public class Book {
-
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
@@ -27,17 +25,18 @@ public class Book {
     private UUID id;
 
     private String author;
+
     private String title;
+
     private String publisher;
+
     private LocalDate date;
+
     private String isbn;
+
     private int quant;
 
     private String bookSearch;
-
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "book")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private List<Task> task;
 
     @Column(length = 4096)
     private String description;
@@ -60,20 +59,6 @@ public class Book {
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private BookCategory bookCategory;
-
-    public Book(String author, String title, String publisher, LocalDate date, String isbn, int quant) {
-        this.author = author;
-        this.title = title;
-        this.publisher = publisher;
-        this.date = date;
-        this.isbn = isbn;
-        this.quant = quant;
-    }
-
-
-
-    public Book() {
-    }
 
     @Override
     public String toString() {
