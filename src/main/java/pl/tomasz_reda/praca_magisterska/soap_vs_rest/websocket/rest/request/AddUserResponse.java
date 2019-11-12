@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 public class AddUserResponse {
 
-    LocalDateTime timeToAddDate;
+    String timeToAddDate;
     List<User> user = new ArrayList<>();
 
     @Override
