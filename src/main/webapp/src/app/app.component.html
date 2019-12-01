@@ -10,32 +10,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1 class="text-center">Rest vs Soap </h1>
+<b><h1 class="text-center">Rest vs Soap </h1></b>
 
 <div class="container">
+<h2 class="text-center">User rest</h2>
+ <p>curl -v localhost:8080/api/rest/user/find?page=0&size=10&name=test</p>
+  <p>'</p>
+  <p>curl -X DELETE localhost:8080/api/rest/user/delete/5</p>
+  <p>curl -d '{{"{"}}"id": "","firstname": "test","lastname": "test","email": "test0@op.pl","phoneNumber": 1231231,"password": "GHJbnm123","userRoles": {{"{"}}"id": 1,"userRole": "CASUAL_USER"{{"}"}}{{"}"}}' -H 'Content-Type: application/json' localhost:8080/api/rest/user/add</p>
+  <p>curl -d '{{"{"}}"id": "1","firstname": "test","lastname": "test","email": "test0@op.pl","phoneNumber": 1231231,"password": "GHJbnm123","userRoles": {{"{"}}"id": 1,"userRole": "CASUAL_USER"{{"}"}}{{"}"}}' -H 'Content-Type: application/json' -X PUT  localhost:8080/api/rest/user/edit
+  </p>
+  <h2 class="text-center">Book rest</h2>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
 
-  <table class="table table-bordered table-dark">
-    <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">Rest</th>
-      <th scope="col">Soap</th>
-      <th scope="col">Opis</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>End Point Resta</td>
-      <td>End point soap</td>
-      <td>Opis</td>
-    </tr>
-
-
-    </tbody>
-  </table>
 
 </div>
+
 
 
 </body>

@@ -21,7 +21,6 @@ public class AngularController {
 
     @GetMapping("/home")
     public String home(Model model) {
-        System.err.println("aaaaa");
         return page();
     }
 }
