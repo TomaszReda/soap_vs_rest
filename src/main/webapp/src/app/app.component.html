@@ -22,8 +22,8 @@
   <h2 class="text-center">Book rest</h2>
   <p>curl -v localhost:8080/api/rest/book/find?page=0&size=10&author=author</p>
   <p>curl -X DELETE localhost:8080/api/rest/book/delete/5</p>
-  <p>curl -d {{"{"}}"id": "","author": "author4","title": "title4","publisher": "publisher4","date": "2019-12-01","isbn": "isbn4","quant": 4,"bookSearch": "bookSearch4","description": "description4","bookState": "NOTRESERVED","bookCategory": [{{"{"}}"id": 1,"categoryType": "Fantasy"{{"}"}}]{{"}"}} H 'Content-Type: application/json' localhost:8080/api/rest/book/add</p>
-  <p>curl -d {{"{"}}"id": "1","author": "author4","title": "title4","publisher": "publisher4","date": "2019-12-01","isbn": "isbn4","quant": 4,"bookSearch": "bookSearch4","description": "description4","bookState": "NOTRESERVED","bookCategory": [{{"{"}}"id": 1,"categoryType": "Fantasy"{{"}"}}]{{"}"}} H 'Content-Type: application/json' localhost:8080/api/rest/book/edit</p>
+  <p>curl -d '{{"{"}}"id": "","author": "author4","title": "title4","publisher": "publisher4","date": "2019-12-01","isbn": "isbn4","quant": 4,"bookSearch": "bookSearch4","description": "description4","bookState": "NOTRESERVED","bookCategory": [{{"{"}}"id": 1,"categoryType": "Fantasy"{{"}"}}]{{"}"}}' -H 'Content-Type: application/json' localhost:8080/api/rest/book/add</p>
+  <p>curl -d '{{"{"}}"id": "1","author": "author4","title": "title4","publisher": "publisher4","date": "2019-12-01","isbn": "isbn4","quant": 4,"bookSearch": "bookSearch4","description": "description4","bookState": "NOTRESERVED","bookCategory": [{{"{"}}"id": 1,"categoryType": "Fantasy"{{"}"}}]{{"}"}}' -H 'Content-Type: application/json'  -X PUT localhost:8080/api/rest/book/edit</p>
 
 
 </div>
