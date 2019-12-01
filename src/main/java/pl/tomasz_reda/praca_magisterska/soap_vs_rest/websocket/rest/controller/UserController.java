@@ -21,8 +21,8 @@ public class UserController {
 
 
     @PostMapping("/add")
-    public ResponseEntity addUser(@RequestBody UserDto userDto) {
-        return userService.addUser(userDto);
+    public ResponseEntity add(@RequestBody UserDto userDto) {
+        return userService.add(userDto);
     }
 
     @DeleteMapping("/delete/{id}")

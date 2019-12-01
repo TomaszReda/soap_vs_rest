@@ -17,7 +17,6 @@ public interface UserRepository extends JpaRepository<User, Long>, QuerydslPredi
     default public void customize(QuerydslBindings bindings, QUser root) {
         bindings.bind(String.class).first(
                 (StringPath path, String value) -> path.containsIgnoreCase(value));
-        bindings.excluding(root.email);
     }
 
 }
