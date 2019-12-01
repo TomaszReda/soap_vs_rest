@@ -2,17 +2,23 @@ package pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.book;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
-@Entity
+@Slf4j
 @Data
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "`book`")
 public class Book {
 
     @Id
@@ -39,8 +45,12 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private BookState bookState;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private BookCategory bookCategory;
+    @ManyToMany
+    @JoinTable(
+            name = "book_book_category",
+            joinColumns = {@JoinColumn(name = "book_id")},
+            inverseJoinColumns = {@JoinColumn(name = "category_id")}
+    )
+    private Set<BookCategory> bookCategory=new HashSet<>();
 
 }

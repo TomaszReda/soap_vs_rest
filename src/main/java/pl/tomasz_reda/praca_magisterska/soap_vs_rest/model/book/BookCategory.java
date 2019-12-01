@@ -6,12 +6,12 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class BookCategory {
 
     @Id
@@ -20,6 +20,4 @@ public class BookCategory {
 
     private String categoryType;
 
-    @OneToMany(mappedBy = "bookCategory", cascade = CascadeType.ALL)
-    private List<Book> bookList = new ArrayList<>();
 }

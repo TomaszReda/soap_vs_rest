@@ -1,18 +1,18 @@
 package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.mapper;
 
+import org.mapstruct.Context;
 import org.mapstruct.InjectionStrategy;
+import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.book.Book;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.book.BookCategory;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.User;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.dto.UserDto;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.dto.BookDto;
 
+import java.util.List;
 
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.FIELD)
-public interface UserMapper {
-    User toUser(UserDto userDto);
+public interface BookMapper {
 
-    UserDto toUserDto(User user);
+    Book toBook(BookDto bookDto);
 
-    Book toBOkk(UserDto userDto);
 }
