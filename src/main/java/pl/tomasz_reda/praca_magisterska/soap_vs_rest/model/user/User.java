@@ -1,9 +1,6 @@
 package pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -18,15 +15,14 @@ import java.util.UUID;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "`user`")
 public class User {
 
 
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "BINARY(16)")
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String firstname;
 
@@ -38,24 +34,8 @@ public class User {
 
     private String password;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private UserMenager userMenager;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_id")
+    private UserRoles userRoles;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private UserCasual userCasual;
-
-    @OneToOne
-    private UserRoles userRoles ;
-
-
-    public User(String firstname, String lastname, String email, int phoneNumber, String password, UserMenager userMenager, UserCasual userCasual, UserRoles userRoles) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.password = password;
-        this.userMenager = userMenager;
-        this.userCasual = userCasual;
-        this.userRoles = userRoles;
-    }
 }

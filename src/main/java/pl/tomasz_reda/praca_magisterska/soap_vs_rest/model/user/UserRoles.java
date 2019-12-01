@@ -5,6 +5,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -24,6 +26,8 @@ public class UserRoles implements Serializable {
     @Enumerated(EnumType.STRING)
     private UserRoleEnum userRole;
 
+    @OneToMany(mappedBy = "userRoles")
+    private List<User> users = new ArrayList<>();
 
 
 }
