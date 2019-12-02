@@ -1,0 +1,84 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           xmlns:XS="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="addUserRequest2">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstname" type="xs:string"/>
+                <xs:element name="lastname" type="xs:int"/>
+                <xs:element name="phoneNumber" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="userRole" type="tns:UserRoles2"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteUserRequest2">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="editUserRequest2">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer" />
+                <xs:element name="firstname" type="xs:string"/>
+                <xs:element name="lastname" type="xs:int"/>
+                <xs:element name="phoneNumber" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="userRole" type="tns:UserRoles2"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getUserRequest2">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getUserResponse2">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="User" type="tns:User2"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="User2">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer" />
+            <xs:element name="firstname" type="xs:string"/>
+            <xs:element name="lastname" type="xs:int"/>
+            <xs:element name="phoneNumber" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+            <xs:element name="userRole" type="tns:UserRoles2"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="UserRoles2">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer" />
+            <xs:element name="userRole" type="tns:UserRoleEnum2"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:simpleType name="UserRoleEnum2">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ADMIN"/>
+            <xs:enumeration value="CASUAL_USER"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
+
+
