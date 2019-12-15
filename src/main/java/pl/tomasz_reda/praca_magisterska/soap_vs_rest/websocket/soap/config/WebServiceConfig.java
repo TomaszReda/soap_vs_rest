@@ -27,31 +27,31 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 
     @Bean(name = "users")
     public DefaultWsdl11Definition userWsdl11Definition(XsdSchema userSchema) {
-        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("UserPort");
-        wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("https://www.roytuts.com/UserService");
-        wsdl11Definition.setSchema(userSchema);
-        return wsdl11Definition;
-    }
+            DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+            wsdl11Definition.setPortTypeName("CountriesPort");
+            wsdl11Definition.setLocationUri("/ws");
+            wsdl11Definition.setTargetNamespace("https://www.howtodoinjava.com/xml/school");
+            wsdl11Definition.setSchema(userSchema);
+            return wsdl11Definition;
+        }
 
     @Bean
     public XsdSchema userSchema() {
         return new SimpleXsdSchema(new ClassPathResource("xsd/user.xsd"));
     }
 
-    @Bean(name = "books")
-    public DefaultWsdl11Definition bookWsdl11Definition(XsdSchema bookSchema) {
-        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("UserPort");
-        wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("https://www.roytuts.com/UserService");
-        wsdl11Definition.setSchema(bookSchema);
-        return wsdl11Definition;
-    }
-
-    @Bean
-    public XsdSchema bookSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("xsd/book.xsd"));
-    }
+//    @Bean(name = "books")
+//    public DefaultWsdl11Definition bookWsdl11Definition(XsdSchema bookSchema) {
+//        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+//        wsdl11Definition.setPortTypeName("UserPort");
+//        wsdl11Definition.setLocationUri("/ws");
+//        wsdl11Definition.setTargetNamespace("https://www.roytuts.com/Book");
+//        wsdl11Definition.setSchema(bookSchema);
+//        return wsdl11Definition;
+//    }
+//
+//    @Bean
+//    public XsdSchema bookSchema() {
+//        return new SimpleXsdSchema(new ClassPathResource("xsd/book.xsd"));
+//    }
 }

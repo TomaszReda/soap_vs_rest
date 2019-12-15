@@ -9,15 +9,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.User;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.dto.UserDto;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.service.UserService;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.service.UserServiceRest;
 
 
 @Controller
 @RequestMapping("/api/rest/user")
-public class UserController {
+public class UserControllerRest {
 
     @Autowired
-    UserService userService;
+    UserServiceRest userService;
 
 
     @PostMapping("/add")

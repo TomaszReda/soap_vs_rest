@@ -15,7 +15,7 @@ import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.mapper.BookM
 import java.util.Optional;
 
 @Service
-public class BookService {
+public class BookServiceRest {
 
     @Autowired
     private BookRepository bookRepository;

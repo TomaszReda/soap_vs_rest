@@ -9,14 +9,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.book.Book;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.dto.BookDto;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.service.BookService;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.service.BookServiceRest;
 
 @Controller
 @RequestMapping("/api/rest/book")
-public class BookController {
+public class BookControllerRest {
 
     @Autowired
-    private BookService bookService;
+    private BookServiceRest bookService;
 
 
     @PostMapping("/add")
