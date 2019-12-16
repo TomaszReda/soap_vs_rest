@@ -8,6 +8,7 @@ import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.User;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.UserRepository;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.mapper.UserMapper;
 import soap.GetUserResponse;
+import soap.ObjectFactory;
 
 import java.util.List;
 import java.util.Optional;

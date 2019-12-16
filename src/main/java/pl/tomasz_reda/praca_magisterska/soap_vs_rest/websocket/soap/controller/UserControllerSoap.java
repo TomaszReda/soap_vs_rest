@@ -2,18 +2,13 @@ package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.soap.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-import org.springframework.ws.soap.SoapHeaderElement;
-import org.springframework.ws.soap.server.endpoint.annotation.SoapHeader;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.QUser;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.user.User;
+
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.soap.service.UserServiceSoap;
 
-import java.util.function.Predicate;
 
 
 @Endpoint
