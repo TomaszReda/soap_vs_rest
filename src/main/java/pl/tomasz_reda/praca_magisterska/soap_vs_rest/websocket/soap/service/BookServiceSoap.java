@@ -76,14 +76,10 @@ public class BookServiceSoap {
         soap.GetBookResponse getBookResponse = new soap.GetBookResponse();
         getBookResponse.setNumberOfElements(books.getNumberOfElements());
         getBookResponse.setSize(books.getSize());
-        System.err.println("1");
         getBookResponse.setTotalPages(books.getTotalPages());
         getBookResponse.setNumber(books.getNumber());
-        System.err.println("2");
         getBookResponse.setTotalElements(books.getTotalElements());
-        System.err.println("3");
         List<soap.Book> booksList = bookMapper.convertToBookList(books.getContent());
-        System.err.println("4");
         getBookResponse.getBook().addAll(booksList);
         return getBookResponse;
     }
