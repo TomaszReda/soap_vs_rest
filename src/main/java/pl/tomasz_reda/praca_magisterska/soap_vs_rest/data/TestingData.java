@@ -16,9 +16,7 @@ import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.UserRepository;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.UserRoleRepository;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 @Component
 public class TestingData implements CommandLineRunner {
@@ -57,7 +55,7 @@ public class TestingData implements CommandLineRunner {
         }
         User user = null;
         Book book = null;
-        Set<BookCategory> bookCategories = new HashSet<>();
+        List<BookCategory> bookCategories = new ArrayList<>();
         bookCategories.add(bookCategoryRepository.findAll().get(0));
         for (int i = 0; i < 100; i++) {
             Random random = new Random();

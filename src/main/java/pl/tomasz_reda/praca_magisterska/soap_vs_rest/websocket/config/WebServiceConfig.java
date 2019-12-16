@@ -1,4 +1,4 @@
-package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.soap.config;
+package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.config;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -27,13 +27,13 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     }
 
     @Bean(name = "users")
-    public DefaultWsdl11Definition userWsdl11Definition(XsdSchema userXsdSchema)
+    public DefaultWsdl11Definition userWsdl11Definition(XsdSchema userSchema)
     {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("UsersPort");
         wsdl11Definition.setLocationUri("/ws");
         wsdl11Definition.setTargetNamespace("https://www.praca_magister/soap_vs_rest/users.com");
-        wsdl11Definition.setSchema(userXsdSchema);
+        wsdl11Definition.setSchema(userSchema);
         return wsdl11Definition;
     }
 
@@ -44,18 +44,19 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     }
 
 
-//    @Bean(name = "books")
-//    public DefaultWsdl11Definition bookWsdl11Definition(XsdSchema bookSchema) {
-//        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-//        wsdl11Definition.setPortTypeName("UserPort");
-//        wsdl11Definition.setLocationUri("/ws");
-//        wsdl11Definition.setTargetNamespace("https://www.roytuts.com/Book");
-//        wsdl11Definition.setSchema(bookSchema);
-//        return wsdl11Definition;
-//    }
-//
-//    @Bean
-//    public XsdSchema bookSchema() {
-//        return new SimpleXsdSchema(new ClassPathResource("xsd/book.xsd"));
-//    }
+    @Bean(name = "books")
+    public DefaultWsdl11Definition bookWsdl11Definition(XsdSchema bookSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("BookPort");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("https://www.praca_magister/soap_vs_rest/books.com");
+        wsdl11Definition.setSchema(bookSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema bookSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("xsd/book.xsd"));
+    }
+
 }

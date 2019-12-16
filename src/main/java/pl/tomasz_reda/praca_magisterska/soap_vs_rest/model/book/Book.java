@@ -1,15 +1,12 @@
 package pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.book;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @Data
@@ -51,6 +48,6 @@ public class Book {
             joinColumns = {@JoinColumn(name = "book_id")},
             inverseJoinColumns = {@JoinColumn(name = "category_id")}
     )
-    private Set<BookCategory> bookCategory=new HashSet<>();
+    private List<BookCategory> bookCategory = new ArrayList<>();
 
 }

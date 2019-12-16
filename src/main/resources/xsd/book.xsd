@@ -19,7 +19,7 @@
                 <xs:element name="bookSearch" type="xs:string"/>
                 <xs:element name="description" type="xs:string"/>
                 <xs:element name="bookState" type="tns:BookState"/>
-                <xs:element name="bookCategory" type="tns:bookCategoryList"/>
+<!--                <xs:element name="bookCategory" type="tns:BookCategory" minOccurs="0" maxOccurs="unbounded"/>-->
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -35,7 +35,7 @@
                 <xs:element name="bookSearch" type="xs:string"/>
                 <xs:element name="description" type="xs:string"/>
                 <xs:element name="bookState" type="tns:BookState"/>
-                <xs:element name="bookCategory" type="tns:bookCategoryList"/>
+                <xs:element name="bookCategory" type="tns:BookCategory" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -76,14 +76,7 @@
             <xs:element name="bookSearch" type="xs:string"/>
             <xs:element name="description" type="xs:string"/>
             <xs:element name="bookState" type="tns:BookState"/>
-            <xs:element name="bookCategory" type="tns:bookCategoryList"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="bookCategoryList">
-        <xs:sequence>
-            <xs:element name="data" type="tns:BookCategory" minOccurs="0"
-                        maxOccurs="unbounded"/>
+            <xs:element name="bookCategory" type="tns:BookCategory" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 

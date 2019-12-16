@@ -21,11 +21,11 @@ public interface BookRepository extends JpaRepository<Book, Long>, QuerydslPredi
                 (StringPath path, String value) -> path.containsIgnoreCase(value));
     }
 
-//    Page<Book> findAllByAuthorContains(String author, Pageable pageable);
-//
-//    Page<Book> findAllByTitleContains(String title, Pageable pageable);
-//
-//    Page<Book> findAllByAuthorContainsAndTitleContains(String author, String title, Pageable pageable);
+    Page<Book> findAllByAuthorContains(String author, Pageable pageable);
+
+    Page<Book> findAllByTitleContains(String title, Pageable pageable);
+
+    Page<Book> findAllByAuthorContainsAndTitleContains(String author, String title, Pageable pageable);
 }
 
 

@@ -18,8 +18,8 @@ public interface BookMapper {
     Book ResttoBook(BookDto bookDto);
 
     Book SoapAddBookRequestToBook(soap.AddBookRequest addBookRequest);
-//
-//    Book SoapEditBookRequestToBook(soap.EditBookRequest editBookRequest);
-//
-//    List<soap.Book> convertToBookList(List<Book> books);
+
+    Book SoapEditBookRequestToBook(soap.EditBookRequest editBookRequest);
+
+    List<soap.Book> convertToBookList(List<Book> books);
 }
