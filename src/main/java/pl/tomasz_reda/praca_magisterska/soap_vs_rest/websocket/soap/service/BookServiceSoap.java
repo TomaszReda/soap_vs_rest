@@ -8,6 +8,7 @@ import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.book.Book;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.BookRepository;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.mapper.BookMapper;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +30,11 @@ public class BookServiceSoap {
 
     public void addBook(soap.AddBookRequest request) {
         Book book = bookMapper.SoapAddBookRequestToBook(request);
+        LocalDate localDate = LocalDate.of(
+                request.getData().getYear(),
+                request.getData().getMonth(),
+                request.getData().getDay());
+        book.setDate(localDate);
         bookRepository.save(book);
     }
 
@@ -36,6 +42,11 @@ public class BookServiceSoap {
         Optional<Book> bookExsist = bookRepository.findById(request.getId());
         if (bookExsist.isPresent()) {
             Book book = bookMapper.SoapEditBookRequestToBook(request);
+            LocalDate localDate = LocalDate.of(
+                    request.getData().getYear(),
+                    request.getData().getMonth(),
+                    request.getData().getDay());
+            book.setDate(localDate);
             bookRepository.save(book);
         }
     }
@@ -44,7 +55,7 @@ public class BookServiceSoap {
         Page<Book> books;
         PageRequest pageRequest = PageRequest.of(request.getPage(), request.getSize());
         if (!checkIsNullOrEmpty(request.getAuthor()) && !checkIsNullOrEmpty(request.getTitle())) {
-            books = bookRepository.findAllByAuthorContainsAndTitleContains(request.getTitle(), request.getAuthor(), pageRequest);
+            books = bookRepository.findAllByAuthorContainsOrTitleContains(request.getTitle(), request.getAuthor(), pageRequest);
         } else if (!checkIsNullOrEmpty(request.getAuthor()) && checkIsNullOrEmpty(request.getTitle())) {
             books = bookRepository.findAllByAuthorContains(request.getAuthor(), pageRequest);
         } else if (checkIsNullOrEmpty(request.getAuthor()) && !checkIsNullOrEmpty(request.getTitle())) {
@@ -65,10 +76,14 @@ public class BookServiceSoap {
         soap.GetBookResponse getBookResponse = new soap.GetBookResponse();
         getBookResponse.setNumberOfElements(books.getNumberOfElements());
         getBookResponse.setSize(books.getSize());
+        System.err.println("1");
         getBookResponse.setTotalPages(books.getTotalPages());
         getBookResponse.setNumber(books.getNumber());
+        System.err.println("2");
         getBookResponse.setTotalElements(books.getTotalElements());
+        System.err.println("3");
         List<soap.Book> booksList = bookMapper.convertToBookList(books.getContent());
+        System.err.println("4");
         getBookResponse.getBook().addAll(booksList);
         return getBookResponse;
     }

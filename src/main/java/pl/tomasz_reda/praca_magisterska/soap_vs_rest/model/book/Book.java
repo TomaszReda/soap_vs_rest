@@ -42,7 +42,7 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private BookState bookState;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "book_book_category",
             joinColumns = {@JoinColumn(name = "book_id")},

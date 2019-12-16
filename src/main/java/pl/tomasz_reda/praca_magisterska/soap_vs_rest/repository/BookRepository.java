@@ -25,7 +25,7 @@ public interface BookRepository extends JpaRepository<Book, Long>, QuerydslPredi
 
     Page<Book> findAllByTitleContains(String title, Pageable pageable);
 
-    Page<Book> findAllByAuthorContainsAndTitleContains(String author, String title, Pageable pageable);
+    Page<Book> findAllByAuthorContainsOrTitleContains(String author, String title, Pageable pageable);
 }
 
 

@@ -48,7 +48,7 @@ public class UserServiceSoap {
         Page<User> users;
         PageRequest pageRequest = PageRequest.of(request.getPage(), request.getSize());
         if (!checkIsNullOrEmpty(request.getLastname()) && !checkIsNullOrEmpty(request.getFirstname())) {
-            users = userRepository.findAllByFirstnameContainsAndLastnameContains(request.getFirstname(), request.getLastname(), pageRequest);
+            users = userRepository.findAllByFirstnameContainsOrLastnameContains(request.getFirstname(), request.getLastname(), pageRequest);
         } else if (!checkIsNullOrEmpty(request.getLastname()) && checkIsNullOrEmpty(request.getFirstname())) {
             users = userRepository.findAllByLastnameContains(request.getLastname(), pageRequest);
         } else if (checkIsNullOrEmpty(request.getLastname()) && !checkIsNullOrEmpty(request.getFirstname())) {
