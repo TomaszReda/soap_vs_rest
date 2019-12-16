@@ -24,7 +24,7 @@ public class BookServiceRest {
     private BookMapper bookMapper;
 
     public ResponseEntity add(@RequestBody BookDto bookDto) {
-        Book book = bookMapper.toBook(bookDto);
+        Book book = bookMapper.ResttoBook(bookDto);
         bookRepository.save(book);
         return ResponseEntity.ok().build();
     }
@@ -38,7 +38,7 @@ public class BookServiceRest {
     }
 
     public ResponseEntity edit(@RequestBody BookDto BookDto) {
-        Book book = bookMapper.toBook(BookDto);
+        Book book = bookMapper.ResttoBook(BookDto);
         bookRepository.save(book);
         return ResponseEntity.ok().build();
 
