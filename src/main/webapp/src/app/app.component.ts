@@ -67,4 +67,20 @@ export class AppComponent {
     '    </soapenv:Envelope>' +
     '\'';
 
+  deleteBookSoap = '  curl -X POST http://localhost:8080/ws   -H \'Content-Type: text/xml\'   -H \'SOAPAction: blz:getBank\' -d \'\n' +
+    '' +
+    '\'';
+
+  editBookSoap = '  curl -X POST http://localhost:8080/ws   -H \'Content-Type: text/xml\'   -H \'SOAPAction: blz:getBank\' -d \'\n' +
+    '' +
+    '\'';
+
+  addBookSoap = '  curl -X POST http://localhost:8080/ws   -H \'Content-Type: text/xml\'   -H \'SOAPAction: blz:getBank\' -d \'\n' +
+    '' +
+    '\'';
+
+  findBookSoap = '  curl -X POST http://localhost:8080/ws   -H \'Content-Type: text/xml\'   -H \'SOAPAction: blz:getBank\' -d \'\n' +
+    '' +
+    '\'';
 }
+
