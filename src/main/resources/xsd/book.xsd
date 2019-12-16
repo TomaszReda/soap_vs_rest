@@ -1,16 +1,106 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
-           xmlns:XS="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://www.praca_magister/soap_vs_rest/users.com"
+           targetNamespace="https://www.praca_magister/soap_vs_rest/users.com" elementFormDefault="qualified">
 
-    <xs:element name="book">
+    <xs:element name="DeleteBookRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="firstname" type="xs:string"/>
-                <xs:element name="lastname" type="xs:int"/>
-                <xs:element name="phoneNumber" type="xs:string"/>
-                <xs:element name="password" type="xs:string"/>
+                <xs:element name="id" type="xs:long"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-</xs:schema>
 
+    <xs:element name="AddBookRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="xs:string"/>
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="publisher" type="xs:string"/>
+                <xs:element name="quant" type="xs:int"/>
+                <xs:element name="bookSearch" type="xs:string"/>
+                <xs:element name="description" type="xs:string"/>
+                <xs:element name="bookState" type="tns:BookState"/>
+                <xs:element name="bookCategory" type="tns:bookCategoryList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="EditBookRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="author" type="xs:string"/>
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="publisher" type="xs:string"/>
+                <xs:element name="quant" type="xs:int"/>
+                <xs:element name="bookSearch" type="xs:string"/>
+                <xs:element name="description" type="xs:string"/>
+                <xs:element name="bookState" type="tns:BookState"/>
+                <xs:element name="bookCategory" type="tns:bookCategoryList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="GetBookRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="page" type="xs:int"/>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element name="author" type="xs:string"/>
+                <xs:element name="title" type="xs:string"/>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetBookResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element name="totalPages" type="xs:int"/>
+                <xs:element name="number" type="xs:int"/>
+                <xs:element name="numberOfElements" type="xs:int"/>
+                <xs:element name="totalElements" type="xs:long"/>
+                <xs:element name="book" type="tns:Book" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Book">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="author" type="xs:string"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="publisher" type="xs:string"/>
+            <xs:element name="quant" type="xs:int"/>
+            <xs:element name="bookSearch" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="bookState" type="tns:BookState"/>
+            <xs:element name="bookCategory" type="tns:bookCategoryList"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="bookCategoryList">
+        <xs:sequence>
+            <xs:element name="data" type="tns:BookCategory" minOccurs="0"
+                        maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="BookCategory">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="categoryType" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:simpleType name="BookState">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BOOKED"/>
+            <xs:enumeration value="NOTRESERVED"/>
+            <xs:enumeration value="DELETE"/>
+            <xs:enumeration value="CONFIRMED"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

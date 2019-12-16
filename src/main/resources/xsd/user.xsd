@@ -1,52 +1,63 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://www.howtodoinjava.com/xml/school"
-           targetNamespace="https://www.howtodoinjava.com/xml/school" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://www.praca_magister/soap_vs_rest/users.com"
+           targetNamespace="https://www.praca_magister/soap_vs_rest/users.com" elementFormDefault="qualified">
 
-<xs:element name="addUserRequest">
+    <xs:element name="DeleteUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AddUserRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="firstname" type="xs:string"/>
-                <xs:element name="lastname" type="xs:int"/>
+                <xs:element name="lastname" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
                 <xs:element name="phoneNumber" type="xs:string"/>
                 <xs:element name="password" type="xs:string"/>
-                <xs:element name="userRole" type="tns:UserRoles"/>
+                <xs:element name="userRoles" type="tns:UserRoles"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="deleteUserRequest">
+    <xs:element name="EditUserRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="id" type="xs:integer"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="editUserRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="id" type="xs:integer" />
+                <xs:element name="id" type="xs:long"/>
                 <xs:element name="firstname" type="xs:string"/>
-                <xs:element name="lastname" type="xs:int"/>
+                <xs:element name="lastname" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
                 <xs:element name="phoneNumber" type="xs:string"/>
                 <xs:element name="password" type="xs:string"/>
-                <xs:element name="userRole" type="tns:UserRoles"/>
+                <xs:element name="userRoles" type="tns:UserRoles"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
 
-    <xs:element name="getUserRequest">
+    <xs:element name="GetUserRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="id" type="xs:integer"/>
+                <xs:element name="page" type="xs:int"/>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element name="lastname" type="xs:string" />
+                <xs:element name="firstname" type="xs:string"/>
+
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getUserResponse">
+    <xs:element name="GetUserResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="User" type="tns:User"/>
+                <xs:element name="size" type="xs:int"/>
+                <xs:element name="totalPages" type="xs:int"/>
+                <xs:element name="number" type="xs:int"/>
+                <xs:element name="numberOfElements" type="xs:int"/>
+                <xs:element name="totalElements" type="xs:long"/>
+                <xs:element name="User" type="tns:User" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -54,19 +65,20 @@
 
     <xs:complexType name="User">
         <xs:sequence>
-            <xs:element name="id" type="xs:integer" />
+            <xs:element name="id" type="xs:long"/>
             <xs:element name="firstname" type="xs:string"/>
-            <xs:element name="lastname" type="xs:int"/>
+            <xs:element name="lastname" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
             <xs:element name="phoneNumber" type="xs:string"/>
             <xs:element name="password" type="xs:string"/>
-            <xs:element name="userRole" type="tns:UserRoles"/>
+            <xs:element name="userRoles" type="tns:UserRoles"/>
         </xs:sequence>
     </xs:complexType>
 
 
     <xs:complexType name="UserRoles">
         <xs:sequence>
-            <xs:element name="id" type="xs:integer" />
+            <xs:element name="id" type="xs:long"/>
             <xs:element name="userRole" type="tns:UserRoleEnum"/>
         </xs:sequence>
     </xs:complexType>
@@ -79,5 +91,3 @@
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>
-
-

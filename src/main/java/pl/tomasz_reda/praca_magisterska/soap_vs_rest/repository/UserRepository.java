@@ -1,6 +1,8 @@
 package pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository;
 
 import com.querydsl.core.types.dsl.StringPath;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
@@ -18,5 +20,12 @@ public interface UserRepository extends JpaRepository<User, Long>, QuerydslPredi
         bindings.bind(String.class).first(
                 (StringPath path, String value) -> path.containsIgnoreCase(value));
     }
+
+    Page<User> findAllByFirstnameContains(String firstname, Pageable pageable);
+
+    Page<User> findAllByLastnameContains(String lastName, Pageable pageable);
+
+    Page<User> findAllByFirstnameContainsAndLastnameContains(String firstname, String lastname, Pageable pageable);
+
 
 }

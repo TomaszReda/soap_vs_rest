@@ -1,4 +1,5 @@
 package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.service;
+
 import org.springframework.data.domain.Pageable;
 import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.dto.UserDto;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.mapper.UserMapper;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class UserServiceRest {
@@ -25,22 +25,25 @@ public class UserServiceRest {
     private UserMapper userMapper;
 
     public ResponseEntity add(@RequestBody UserDto userDto) {
-        User user = userMapper.toUser(userDto);
+        User user = userMapper.ResttoUser(userDto);
         userRepository.save(user);
         return ResponseEntity.ok().build();
     }
 
     public ResponseEntity delete(Long id) {
         Optional<User> user = userRepository.findById(id);
-        if(user.isPresent()){
+        if (user.isPresent()) {
             userRepository.delete(user.get());
         }
         return ResponseEntity.ok().build();
     }
 
     public ResponseEntity edit(@RequestBody UserDto userDto) {
-        User user = userMapper.toUser(userDto);
-        userRepository.save(user);
+        Optional<User> userExsist = userRepository.findById(userDto.getId());
+        if (userExsist.isPresent()) {
+            User user = userMapper.ResttoUser(userDto);
+            userRepository.save(user);
+        }
         return ResponseEntity.ok().build();
 
     }

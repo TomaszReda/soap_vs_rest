@@ -18,7 +18,8 @@ import org.springframework.xml.xsd.XsdSchema;
 public class WebServiceConfig extends WsConfigurerAdapter {
 
     @Bean
-    public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
+    public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext)
+    {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
@@ -26,19 +27,22 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     }
 
     @Bean(name = "users")
-    public DefaultWsdl11Definition userWsdl11Definition(XsdSchema userSchema) {
-            DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-            wsdl11Definition.setPortTypeName("CountriesPort");
-            wsdl11Definition.setLocationUri("/ws");
-            wsdl11Definition.setTargetNamespace("https://www.howtodoinjava.com/xml/school");
-            wsdl11Definition.setSchema(userSchema);
-            return wsdl11Definition;
-        }
+    public DefaultWsdl11Definition userWsdl11Definition(XsdSchema userXsdSchema)
+    {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("UsersPort");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("https://www.praca_magister/soap_vs_rest/users.com");
+        wsdl11Definition.setSchema(userXsdSchema);
+        return wsdl11Definition;
+    }
 
     @Bean
-    public XsdSchema userSchema() {
+    public XsdSchema userSchema()
+    {
         return new SimpleXsdSchema(new ClassPathResource("xsd/user.xsd"));
     }
+
 
 //    @Bean(name = "books")
 //    public DefaultWsdl11Definition bookWsdl11Definition(XsdSchema bookSchema) {
