@@ -1,24 +1,29 @@
+
 version: "3"
 services:
-  postgreSQL:
-    restart: always
-    image: sameersbn/postgresql:10-2
-    ports:
-      - "5432:5432"
-    expose:
-      - 5432
-    environment:
-      - DEBUG=false
-      - DB_USER=admin
-      - DB_PASS=admin
-      - DB_NAME=praca_magisterska
-  soap_vs_rest:
+  soap_vs_rest123:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: soap_vs_rest
-    depends_on:
-      - postgreSQL
     ports:
       - "8080:8080"
+    links:
+      - app-db
+    environment:
+      - MYAPP_JDBC_URL=jdbc:postgresql://app-db:5432/praca_magisterska
+      - MYAPP_JDBC_USER=someuser
+      - MYAPP_JDBC_PASS=pass
+  app-db:
+    build:
+      context: .
+      dockerfile: ppostgres/Dockerfile
+    expose:
+      - 5432
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=praca_magisterska
 
