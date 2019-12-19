@@ -1,12 +1,17 @@
 version: "3"
 services:
-  PostgreSQL:
+  soap_vs_rest:
+    build: ./soap_vs_rest
+    container_name: soap_vs_rest
+    ports:
+      - "8080:8080"
+  postgreSQL:
     restart: always
     image: sameersbn/postgresql:10-2
     ports:
-    - "5432:5432"
+      - "5432:5432"
     environment:
-    - DEBUG=false
-    - DB_USER=admin
-    - DB_PASS=admin
-    - DB_NAME=praca_magisterska
+      - DEBUG=false
+      - DB_USER=admin
+      - DB_PASS=admin
+      - DB_NAME=praca_magisterska
