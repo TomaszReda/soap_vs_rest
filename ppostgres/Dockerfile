@@ -1,4 +1,0 @@
-FROM postgres
-ENV POSTGRES_DB praca_magisterska
-ENV POSTGRES_USER admin
-ENV POSTGRES_PASSWORD admin

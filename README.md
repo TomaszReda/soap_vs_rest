@@ -1,4 +1,5 @@
-Docker
-## Podniesienie samej bazy
-docker-compose up -d postgreSQ
-## Podniesienie aplikacji
+#Docker
+## 1.Budujemy aplikacje celem bootJar
+## Budujemy obrazy dockera docker-compose build
+## Uruchamiamy baze dannych docker-compose up -d postgres
+## Uruchamiamy aplikacje 
