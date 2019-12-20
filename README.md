@@ -1,5 +1,7 @@
 #Docker
-## 1.Budujemy aplikacje celem bootJar
-## Budujemy obrazy dockera docker-compose build
-## Uruchamiamy baze dannych docker-compose up -d postgres
-## Uruchamiamy aplikacje 
+1. Budujemy aplikacje celem bootJar
+2. Budujemy obrazy dockera docker-compose build
+3. Uruchamiamy obraz <b>docker compose up -d </b>
+
+#Uruchomienie samej bazy
+docker-compose up -d postgres

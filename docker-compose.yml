@@ -1,6 +1,6 @@
 version: "3"
 services:
-  springbootapp:
+  rest_vs_soap:
     build:
       context: .
       dockerfile: Dockerfile
