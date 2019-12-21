@@ -8,6 +8,8 @@ import {AppComponent} from "./app.component";
 import {StateComponent} from "./state/state.component";
 import {FormatComponent} from "./format/format.component";
 import {CacheComponent} from "./cache/cache.component";
+import {ProtocolComponent} from "./protocol/protocol.component";
+import {ConfigComponent} from "./config/config.component";
 
 const appRoutes: Routes = [
   {
@@ -17,6 +19,14 @@ const appRoutes: Routes = [
   {
     path: 'cache',
     component: CacheComponent
+  },
+  {
+    path: 'protokol',
+    component: ProtocolComponent
+  },
+  {
+    path: 'configuracja',
+    component: ConfigComponent
   },
   {
     path: 'wstep',

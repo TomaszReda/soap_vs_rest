@@ -9,6 +9,8 @@ import { PerformanceComponent } from './performance/performance.component';
 import { StateComponent } from './state/state.component';
 import { FormatComponent } from './format/format.component';
 import { CacheComponent } from './cache/cache.component';
+import { ProtocolComponent } from './protocol/protocol.component';
+import { ConfigComponent } from './config/config.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CacheComponent } from './cache/cache.component';
     PerformanceComponent,
     StateComponent,
     FormatComponent,
-    CacheComponent],
+    CacheComponent,
+    ProtocolComponent,
+    ConfigComponent],
   imports: [
     BrowserModule,
     AppRoutingModule
