@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TestSoapComponent } from './test-soap/test-soap.component';
-import { MainComponent } from './main/main.component';
 import { AppRoutingModule } from './app-routing.module';
+import { IntroductionComponent } from './introduction/introduction.component';
+import { PerformanceComponent } from './performance/performance.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestSoapComponent,
-    MainComponent],
+    IntroductionComponent,
+    PerformanceComponent],
   imports: [
     BrowserModule,
     AppRoutingModule

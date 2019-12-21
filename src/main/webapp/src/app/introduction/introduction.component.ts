@@ -1,11 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  selector: 'app-introduction',
+  templateUrl: './introduction.component.html',
+  styleUrls: ['./introduction.component.css']
 })
-export class MainComponent implements OnInit {
+export class IntroductionComponent implements OnInit {
+
 
   deleteUserSoap = '  curl -X POST http://localhost:8080/ws   -H \'Content-Type: text/xml\'   -H \'SOAPAction: blz:getBank\' -d \'\n' +
     '    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="https://www.praca_magister/soap_vs_rest/users.com">\n' +

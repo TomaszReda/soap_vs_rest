@@ -1,17 +1,28 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
-import {MainComponent} from "./main/main.component";
 import {TestSoapComponent} from "./test-soap/test-soap.component";
+import {IntroductionComponent} from "./introduction/introduction.component";
+import {PerformanceComponent} from "./performance/performance.component";
+import {AppComponent} from "./app.component";
 
 const appRoutes: Routes = [
+
+  {
+    path: 'wstep',
+    component: IntroductionComponent,
+  },
+  {
+    path: 'wydajnosc',
+    component: PerformanceComponent,
+  },
   {
     path: 'test',
     component: TestSoapComponent,
   },
   {
     path: 'home',
-    component: MainComponent,
+    component: AppComponent,
   },
   {
     path: '',
