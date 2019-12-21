@@ -15,6 +15,7 @@ public class BookControllerSoap {
     @Autowired
     private BookServiceSoap bookServiceSoap;
 
+
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "DeleteBookRequest")
     public void deleteBook(@RequestPayload soap.DeleteBookRequest request) {
         bookServiceSoap.deleteBook(request);
@@ -35,4 +36,13 @@ public class BookControllerSoap {
     public soap.GetBookResponse getBook(@RequestPayload soap.GetBookRequest request) {
         return bookServiceSoap.getBook(request);
     }
+
+    @PayloadRoot(namespace = NAMESPACE_URI,localPart = "FindBookCategoryRequest")
+    @ResponsePayload
+    public soap.FindBookCategoryResponse getBook() {
+        return bookServiceSoap.findBookCAtegory();
+    }
 }
+
+
+

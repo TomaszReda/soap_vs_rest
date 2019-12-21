@@ -7,11 +7,16 @@ import {PerformanceComponent} from "./performance/performance.component";
 import {AppComponent} from "./app.component";
 import {StateComponent} from "./state/state.component";
 import {FormatComponent} from "./format/format.component";
+import {CacheComponent} from "./cache/cache.component";
 
 const appRoutes: Routes = [
   {
     path: 'stanowosc',
     component: StateComponent,
+  },
+  {
+    path: 'cache',
+    component: CacheComponent
   },
   {
     path: 'wstep',

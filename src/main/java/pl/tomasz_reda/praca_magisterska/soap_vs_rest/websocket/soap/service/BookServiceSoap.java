@@ -5,8 +5,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.model.book.Book;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.BookCategoryRepository;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.BookRepository;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.mapper.BookMapper;
+import soap.FindBookCategoryResponse;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -19,6 +21,9 @@ public class BookServiceSoap {
     private BookRepository bookRepository;
 
     @Autowired
+    private BookCategoryRepository bookCategoryRepository;
+
+    @Autowired
     private BookMapper bookMapper;
 
     public void deleteBook(soap.DeleteBookRequest request) {
@@ -26,6 +31,14 @@ public class BookServiceSoap {
         if (book.isPresent()) {
             bookRepository.delete(book.get());
         }
+    }
+
+    public soap.FindBookCategoryResponse findBookCAtegory() {
+        soap.FindBookCategoryResponse findBookCategoryResponse=new FindBookCategoryResponse();
+        findBookCategoryResponse.getBookCategory().addAll(
+                bookMapper.toBookCategoryList(bookCategoryRepository.findAll())
+        );
+        return findBookCategoryResponse;
     }
 
     public void addBook(soap.AddBookRequest request) {

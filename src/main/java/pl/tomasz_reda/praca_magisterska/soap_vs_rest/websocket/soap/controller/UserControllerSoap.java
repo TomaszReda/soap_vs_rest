@@ -9,6 +9,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.soap.service.UserServiceSoap;
 
+import javax.jdo.annotations.Cacheable;
 
 
 @Endpoint

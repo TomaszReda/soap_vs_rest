@@ -1,0 +1,27 @@
+<br/>
+<div class="container">
+  <h1 class="text-center" style="font-size: 60px;font-weight: bold">4. Cachowanie</h1>
+<p>W Rescie mamy mozliwosc dodania cache w tym celu dodajemy konfiguracje </p>
+
+  <p style="white-space: pre-line;color:#4cae4c">{{cacheConfig}}</p>
+  <p>I odpowiednio dodajemy CACHEABLE do kontrollera</p>
+  <p style="white-space: pre-line;color: #4cae4c">{{cacheController}}</p>
+<p>Dzieki temu przy bedziemy pobierac liste kategori ksiazek tylko raz dziennie. Pierwsze zapytanie ja pobierze a kolejne beda braly z cacha </p>
+  <p style="white-space: pre-line;color: #4cae4c">{{restQuery}}</p>
+<p>W soapie nie ma takiej mozliwosci i liste kategori ksiazek bedziemy pobierac zawsze</p>
+  <p style="white-space: pre-line;color: #4cae4c">{{soapQuery}}</p>
+
+  <p style="color:red;font-weight: bold;font-size: 25px">REST dzieki obsludze cache moze ustawic pobieranie jakis danych tylko i wylacznie co pewien okres. W naszym przykladzie Lista kategori ksiazek jest czyms co sie nie bedzie raczej zmienic wiec po co z bazy pobierac ciagle te recordy jak mozna je zacechowac np na jeden dzien</p>
+
+
+</div>
+
+
+
+
+<!--<br/>-->
+<!--<div class="container">-->
+<!--  <h1 class="text-center" style="font-size: 60px;font-weight: bold">4. Format</h1>-->
+
+<!--  <p style="color:red;font-weight: bold;font-size: 25px"> </p>-->
+<!--</div>-->

@@ -70,6 +70,18 @@
         </xs:complexType>
     </xs:element>
 
+
+    <xs:element name="FindBookCategoryRequest">
+
+    </xs:element>
+    <xs:element name="FindBookCategoryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bookCategory" type="tns:BookCategory" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:complexType name="Book">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>

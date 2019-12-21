@@ -8,6 +8,7 @@ import { IntroductionComponent } from './introduction/introduction.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { StateComponent } from './state/state.component';
 import { FormatComponent } from './format/format.component';
+import { CacheComponent } from './cache/cache.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormatComponent } from './format/format.component';
     IntroductionComponent,
     PerformanceComponent,
     StateComponent,
-    FormatComponent],
+    FormatComponent,
+    CacheComponent],
   imports: [
     BrowserModule,
     AppRoutingModule

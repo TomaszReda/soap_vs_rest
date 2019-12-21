@@ -21,5 +21,6 @@ public interface BookMapper {
 
     Book SoapEditBookRequestToBook(soap.EditBookRequest editBookRequest);
 
+    List<soap.BookCategory> toBookCategoryList(List<BookCategory> bookCategories);
     List<soap.Book> convertToBookList(List<Book> books);
 }
