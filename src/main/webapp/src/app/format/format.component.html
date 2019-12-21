@@ -4,24 +4,33 @@
   <p>Endpointy SOAPA przyjmują tylko i wyłacznie dane w formacie XML</p>
   <p>
     Dla naszego przykładu dodania użytkownika zapyanie z xml wyglada następujaco:
-  <p><b style="color: #4cae4c">{{soapXML}}</b>
-  <br/><br/>
-  <p>Endpointy RESTA przymują dane w formacie HTML,YAML,XML,JSON czy nawet być zwykłego tekstu.</p>
-  <p>
-    Dla naszego przykładu dodania użytkownika HTML wyglada następujaco:</p>
-  <p><b style="color: #4cae4c">{{restHTML}}</b></p>
-  <p>
-    Dla naszego przykładu dodania użytkownika YAML wyglada następujaco:</p>
-  <p><b style="color: #4cae4c">{{restYAML}}</b></p>
-  <p>
-    Dla naszego przykładu dodania użytkownika XML wyglada następujaco:</p>
-  <p><b style="color: #4cae4c">{{restXML}}</b></p>
+  <p style="white-space: pre-line"><b style="color: #4cae4c">{{soapXML}}</b>
+    <p>A generewacja xsd wyglada nastepujaco</p>
+  <p style="white-space: pre-line"><b style="color: #4cae4c">{{soapXMLUserCOnfig}}</b>
+    <br/><br/>
+  <p style="white-space: pre-line">Endpointy RESTA przymują dane w formacie HTML,YAML,XML,JSON i wiele innych czy nawet być zwykłego tekstu.Wystaczy
+    ze przy wystawianiu endpointa:<br/>
+    '@PostMapping(value = "/add",consumes = MediaType.APPLICATION_JSON,produces = MediaTyspe.APPLICATION_JSON'
+    <br/>
+    Padajemy jaki typ ma przyjmowac i jaki typ ma zwracac. U nas jest to json ze wzgledu na jego rozmiar. Ale rownie
+    dobrze moglby to byc xml html czy yaml
+  </p>
   <p>
     Dla naszego przykładu dodania użytkownika JSON wyglada następujaco:</p>
-  <p><b style="color: #4cae4c">{{restJSON}}</b></p>
+  <p style="white-space: pre-line"><b style="color: #4cae4c">{{restJSON}}</b></p>
   <p>
-    Dla naszego przykładu dodania użytkownika zwykły tekst wyglada następujaco:</p>
-  <p><b style="color: #4cae4c">{{restTEXT}}</b></p>
+  Widzimy ze zapytanie SOAPOWE jest o wiele wieksze niz restowe.
+  <p>Jak by wyglada content dla HTML:</p>
+  <p style=" white-space: pre-line"><b style="color: #8a6d3b">{{restHTML}}</b></p>
+  <p>
+  <p>Jak by wyglada content dla YAML:</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restYAML}}</b></p>
+  <p>
+  <p>Jak by wyglada content dla XML:</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restXML}}</b></p>
+
+  <p>Jak by wyglada content dla ZWYKEGO TEKSTU:</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restTEXT}}</b></p>
   <p style="color:red;font-weight: bold;font-size: 25px"> Wymuszenie przez SOAP formatu XML oraz określonych definicji w
     dokumencie powoduje narzut na przesyłane zapytanie. Dostępne dla REST formaty, takie jak JSON, czy YAML, mimo że
     mniej ustandaryzowane, jeśli chodzi o rozmiar są zdecydowanie bardziej optymalne. Różnica w rozmiarze (XML vs JSON)
