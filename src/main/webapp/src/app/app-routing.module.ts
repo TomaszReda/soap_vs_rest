@@ -5,9 +5,14 @@ import {TestSoapComponent} from "./test-soap/test-soap.component";
 import {IntroductionComponent} from "./introduction/introduction.component";
 import {PerformanceComponent} from "./performance/performance.component";
 import {AppComponent} from "./app.component";
+import {StateComponent} from "./state/state.component";
+import {FormatComponent} from "./format/format.component";
 
 const appRoutes: Routes = [
-
+  {
+    path: 'stanowosc',
+    component: StateComponent,
+  },
   {
     path: 'wstep',
     component: IntroductionComponent,
@@ -28,6 +33,10 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'format',
+    component: FormatComponent
   },
 ];
 

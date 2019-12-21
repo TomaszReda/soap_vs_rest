@@ -1,30 +1,64 @@
-
-
+<br/>
 <div class="container">
-  <h2 class="text-center">User rest</h2>
-  <p>curl -v localhost:8080/api/rest/user/find?page=0&size=10&name=test</p>
-  <p>curl -X DELETE localhost:8080/api/rest/user/delete/5</p>
-  <p>curl -d '{{"{"}}"id": "","firstname": "test","lastname": "test","email": "test0@op.pl","phoneNumber": 1231231,"password": "GHJbnm123","userRoles": {{"{"}}"id": 1,"userRole": "CASUAL_USER"{{"}"}}{{"}"}}' -H 'Content-Type: application/json' localhost:8080/api/rest/user/add</p>
-  <p>curl -d '{{"{"}}"id": "1","firstname": "test","lastname": "test","email": "test0@op.pl","phoneNumber": 1231231,"password": "GHJbnm123","userRoles": {{"{"}}"id": 1,"userRole": "CASUAL_USER"{{"}"}}{{"}"}}' -H 'Content-Type: application/json' -X PUT  localhost:8080/api/rest/user/edit
+  <h1 class="text-center" style="font-size: 60px;font-weight: bold">1. Wstęp</h1>
+  <p>Założenia:</p>
+  <ul style="list-style-type: decimal">
+    <li>Aplikacja będzie miała na celu porównanie resta z soapem.</li>
+    <li>Ze względu na małą popularność jako baze danych w aplikacji wykorzystałem postgresSQL(zawsze będzie coś do
+      napisania o tym)
+    </li>
+    <li>Dodatkowo aplikacja jest zdokeryzowana. Da się ja odpalić normalnie z jar jak również z docker (docker-compose
+      up)
+    </li>
+    <li>Głównym tematem porównań będzie wystawienie resta i soapa dla przykładowej prostej funkcjonalności
+      biblioteki(Dodaj, usun, edytuj, wyszukaj uzytkownika oraz Dodaj usun edytuj wyszukaj ksiazke)
+      Schemat bazy danych do tego wyglada następująco: <br/>
+      <img src="/assets/Package book.png"/>
+    </li>
+    <li>Oprócz wyżej wymienionych endpointów pojawią się różnego rodzaju endpointy testowe do wykazania roznic</li>
+    <li>Ogólnie nie mam jeszcze wymyslonej tezy ale Rest jest lepszy fajnieszy milszy i ma legimitymacje polsatu!.
+      Użycie soapa aktualnie na rynku jest znikome. Wiec w tezie bedą raczej
+      udowadniał ze ma lepsze szersze itd zastosowanie od soapa
+    </li>
+  </ul>
+  <p>Poniżej znajdują sie wystawione curle najważniejszych endpointów biblioteki(Można je przekopiować i odpalić)</p>
+  <p><b style="color:red">Zamiast localhost wstawiamy ip serwera 80.211.75.241</b></p>
+  <div style="font-size: 15px">
+  <h1 class="text-center">User rest</h1>
+  <p><b style="color:red">Znalezienie uzytkownika: </b>curl -v localhost:8080/api/rest/user/find?page=0&size=10&name=test</p>
+  <p><b style="color:red">Usuniecie uzytkownika: </b>curl -X DELETE localhost:8080/api/rest/user/delete/5</p>
+  <p><b style="color:red">Dodanie uzytkownika: </b>curl -d '{{"{"}}"id": "","firstname": "test","lastname": "test","email": "test0@op.pl","phoneNumber":
+    1231231,"password": "GHJbnm123","userRoles": {{"{"}}"id": 1,"userRole": "CASUAL_USER"{{"}"}}{{"}"}}' -H
+    'Content-Type: application/json' localhost:8080/api/rest/user/add</p>
+  <p><b style="color:red">Edycja uzytkownika: </b>curl -d '{{"{"}}"id": "1","firstname": "test","lastname": "test","email": "test0@op.pl","phoneNumber":
+    1231231,"password": "GHJbnm123","userRoles": {{"{"}}"id": 1,"userRole": "CASUAL_USER"{{"}"}}{{"}"}}' -H
+    'Content-Type: application/json' -X PUT localhost:8080/api/rest/user/edit
   </p>
-  <h2 class="text-center">Book rest</h2>
-  <p>curl -v localhost:8080/api/rest/book/find?page=0&size=10&author=author</p>
-  <p>curl -X DELETE localhost:8080/api/rest/book/delete/5</p>
-  <p>curl -d '{{"{"}}"id": "","author": "author4","title": "title4","publisher": "publisher4","date": "2019-12-01","isbn": "isbn4","quant": 4,"bookSearch": "bookSearch4","description": "description4","bookState": "NOTRESERVED","bookCategory": [{{"{"}}"id": 1,"categoryType": "Fantasy"{{"}"}}]{{"}"}}' -H 'Content-Type: application/json' localhost:8080/api/rest/book/add</p>
-  <p>curl -d '{{"{"}}"id": "1","author": "author4","title": "title4","publisher": "publisher4","date": "2019-12-01","isbn": "isbn4","quant": 4,"bookSearch": "bookSearch4","description": "description4","bookState": "NOTRESERVED","bookCategory": [{{"{"}}"id": 1,"categoryType": "Fantasy"{{"}"}}]{{"}"}}' -H 'Content-Type: application/json'  -X PUT localhost:8080/api/rest/book/edit</p>
-  <br />
-  <br />
-  <br />
-  <h2 class="text-center">User soap</h2>
-  <p><b>Usuniecie uzytkownika: </b>{{deleteUserSoap}}</p>
-  <p><b>Dodanie uzytkownika: </b>{{addUserSoap}}</p>
-  <p><b>Edycja uzytkownika: </b>{{editUserSoap}}</p>
-  <p><b>Znalezienie uzytkownika: </b>{{findUSerSoap}}</p>
-  <h2 class="text-center">Book soap</h2>
-  <p><b>Usuniecie książki: </b>{{deleteBookSoap}}</p>
-  <p><b>Dodanie książki: </b>{{addBookSoap}}</p>
-  <p><b>Edycja książki: </b>{{editBookSoap}}</p>
-  <p><b>Znalezienie książki: </b>{{findBookSoap}}</p>
+  <h1 class="text-center">Book rest</h1>
+  <p><b style="color:red">Znalezienie książki: </b> curl -v localhost:8080/api/rest/book/find?page=0&size=10&author=author</p>
+  <p><b style="color:red">Usuniecie książki: </b> curl -X DELETE localhost:8080/api/rest/book/delete/5</p>
+  <p><b style="color:red">Edycja książki: </b> curl -d '{{"{"}}"id": "","author": "author4","title": "title4","publisher": "publisher4","date":
+    "2019-12-01","isbn": "isbn4","quant": 4,"bookSearch": "bookSearch4","description": "description4","bookState":
+    "NOTRESERVED","bookCategory": [{{"{"}}"id": 1,"categoryType": "Fantasy"{{"}"}}]{{"}"}}' -H 'Content-Type:
+    application/json' localhost:8080/api/rest/book/add</p>
+  <p><b style="color:red">Edycja książki: </b> curl -d '{{"{"}}"id": "1","author": "author4","title": "title4","publisher": "publisher4","date":
+    "2019-12-01","isbn": "isbn4","quant": 4,"bookSearch": "bookSearch4","description": "description4","bookState":
+    "NOTRESERVED","bookCategory": [{{"{"}}"id": 1,"categoryType": "Fantasy"{{"}"}}]{{"}"}}' -H 'Content-Type:
+    application/json' -X PUT localhost:8080/api/rest/book/edit</p>
+  <br/>
+  <br/>
+  <br/>
+  <h1 class="text-center">User soap</h1>
+  <p><b style="color:red">Usuniecie uzytkownika: </b>{{deleteUserSoap}}</p>
+  <p><b style="color:red">Dodanie uzytkownika: </b>{{addUserSoap}}</p>
+  <p><b style="color:red">Edycja uzytkownika: </b>{{editUserSoap}}</p>
+  <p><b style="color:red">Znalezienie uzytkownika: </b>{{findUSerSoap}}</p>
+  <h1 class="text-center">Book soap</h1>
+  <p><b style="color:red">Usuniecie książki: </b>{{deleteBookSoap}}</p>
+  <p><b style="color:red">Dodanie książki: </b>{{addBookSoap}}</p>
+  <p><b style="color:red">Edycja książki: </b>{{editBookSoap}}</p>
+  <p><b style="color:red">Znalezienie książki: </b>{{findBookSoap}}</p>
+  </div>
 </div>
 
 
