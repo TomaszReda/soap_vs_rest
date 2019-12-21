@@ -2,6 +2,44 @@
 <br/>
 <div class="container">
   <h1 class="text-center" style="font-size: 60px;font-weight: bold">7. Konfiguracja</h1>
+  <p>Przedstawie tutaj jakas prosta konfiguracje 1 czynnosci np Dodania uzytkownika bez wiekszego opisu bo on tak naprawde bedzie w czesci teoretycznej pracy</p>
+  <p class="text-center" style="font-size: 40px;color: red">KONFIGURACJA WSPOLA</p>
+  <p>Stworzenie modelu na dane</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{model}}</b></p>
+  <p>Stworzenie repozytorium</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{repository}}</b></p>
 
-  <p style="color:red;font-weight: bold;font-size: 25px"> </p>
+  <p class="text-center" style="font-size: 40px;color: red">KONFIGURACJA REST</p>
+  <p>Dodanie controllera</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restController}}</b></p>
+  <p>Dodanie serwisu</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restService}}</b></p>
+  <p>Dodanie DTOSA</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restDto}}</b></p>
+  <p>Dodanie mappera</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restMapper}}</b></p>
+  <p>Tak naprawde moglibysmy to zrobic w 2 klasach.W controller przekazywac obiekt User zamiast UserDto i w serwisie go odbierac i odrazu zapisywac.
+   Takie rozwiazanie nie jest jednak stosowane bo nie powinno sie przesylac encji tylko dtosy danego obiektu. Latwo sie je rozstrze i na nich operuje. </p>
+  <p class="text-center" style="font-size: 40px;color: red">KONFIGURACJA SOAPA</p>
+  <p>Dodanie plik /soap_vs_rest/src/main/resources/xsd/user.xsd z zawartoscia:</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{soapPlikWSD}}</b></p>
+<p>Dodanie configuracji: </p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{soapCOnfig}}</b></p>
+  <p>Nastepnie przechodzimy do gradle i odpalamy cel jaxb spowoduje to wygenerowanie 3 klass zawieraja one zapytanie fabryke role uzytkownika oraz fabryke do tworzenia tych obiektow</p>
+  <img src="/assets/Zrzut ekranu z 2019-12-21 23-34-04.png" />
+  <p>Dodanie controllera</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{soapCOntroller}}</b></p>
+  <p>Dodanie serwisu</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{soapService}}</b></p>
+  <p>Dodanie mappera</p>
+  <p style="white-space: pre-line"><b style="color: #8a6d3b">{{soapMapper}}</b></p>
+<p>Wazne tez jest nie w tym przypadku ale tak ogolnie REST wspiera nowe rzeczy SOAP nie za bardzo
+W RESCIE mozemy uzywac bezposrednio paginacji i predicatow gotowych mechanizmow w SOAP musimy napisac sobie na to swoj wlasny mechanizm</p>
+
+  <p style="color:red;font-weight: bold;font-size: 25px">SOAP jest o wiele trudniejszy w konfiguracji niz REST. Wymaga znajomosci xml do samej konfiguracji REST nie.<br/>
+    SOAP ma wieksza ilosc kodu a w dzisiejszych czasach zalozenie jest takie zeby bylo go jak najmniej. <br/>
+    Dodatkowo SOAP jest mniej udokumentowany. Nie jest tak latwo znalesc cos na to. <br/>
+    REST wspiera nowe rzeczy. SOAP nie koniecznie nie ma tam paginacji i predicatow. <br/>
+    Sam z wlasnego doswiadczenia wiem ze trudniej sie wdrozyc do SOAP niz do REST nowi ludzie ktorzy zaczynaja programowac zaczynaja w 99% od REST a SOAPA ewentualnie douczaja sie potem
+  </p>
 </div>
