@@ -1,10 +1,33 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Routes} from "@angular/router";
+import {MainComponent} from "./main/main.component";
+import {TestSoapComponent} from "./test-soap/test-soap.component";
 
-const routes: Routes = [];
+const appRoutes: Routes = [
+  {
+    path: 'test',
+    component: TestSoapComponent,
+  },
+  {
+    path: 'home',
+    component: MainComponent,
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+];
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
+  imports: [
+    RouterModule.forRoot(appRoutes),
+    CommonModule
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
