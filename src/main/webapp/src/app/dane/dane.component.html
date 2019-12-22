@@ -1,11 +1,25 @@
-
-
-
 <br/>
 <div class="container">
   <h1 class="text-center" style="font-size: 60px;font-weight: bold">11. Dane</h1>
+  <p>REST traktuje dane jako zasoby; udostępnione one są za pomocą standardu URI (Uniform Resource Identifier),
+    konkretne zasoby bywają w praktyce opisane w dokumentacji serwisu. SOAP udostępnia elementy logiki aplikacji jako
+    usługi, definiowane według standardu WSDL opracowanego przez Microsoft i IBM. Plik definiuje, jakie informacje i w
+    jaki sposób można wydobyć z serwisu.</p>
+  <p>Interfejsy API REST uzyskują dostęp do zasobu danych (URI); Interfejsy API SOAP wykonują operację. REST to
+    architektura bardziej oparta na danych; SOAP to ustandaryzowany protokół do przesyłania uporządkowanych informacji,
+    które bardziej zależą od funkcji.</p>
+  <p>To teoria a o co chodzi tak po ludzku to SOAP opiera sie na tym ze definiujemy w wsdl pliki z np tam dajemy co ma
+    przyjsc do ma wyjsc np dla wyszukiwania: </p>
+  <p style="white-space: pre-line;color:#8a6d3b">{{soapWsdl}}</p>
+  <p>Na podstawie tego generuja sie klasy</p>
+  <p><img src="/assets/Zrzut ekranu z 2019-12-22 14-55-40.png"></p>
+  <p>Ktora potem uzywamy w controllerze </p>
+  <p style="white-space: pre-line;color:#8a6d3b">{{soapCOntrooler}}</p>
+  <br/> <br/> <br/>
+  <p>Rest z kolei pozwala na dowolnosc definiujemy co ma wejsc a co ma wyjsc z danego RESTA sami</p>
+  <p style="white-space: pre-line;color:#8a6d3b">{{restController}}</p>
 
-  <p style="color:red;font-weight: bold;font-size: 25px"> </p>
+  <p style="color:red;font-weight: bold;font-size: 25px">W rescie mamy wieksza dowolnosc i latwiejsza konfiguracje tej dowolnosci</p>
 </div>
 
 
