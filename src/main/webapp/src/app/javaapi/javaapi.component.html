@@ -1,6 +1,41 @@
 <br/>
 <div class="container">
   <h1 class="text-center" style="font-size: 60px;font-weight: bold">12. Java API</h1>
+<p>Tutaj tez taka dosc oczywista roznica uzywanego api. SOAP uzywa JAX-WS a REST JAX-RS troche histori o nich</p>
+  <h1 class="text-center" style="font-size: 40px;font-weight: bold">JAX-WS</h1>
+<p>Java API dla usług internetowych XML (JAX-WS) to API języka programowania Java do tworzenia usług internetowych, w szczególności usług SOAP. JAX-WS jest jednym z API programowania Java XML. Jest częścią platformy Java EE.
+  <br/>  <br/>
+  Specyfikacja JSR 224 JAX-WS 2.2 definiuje standardowe odwzorowanie Java na WSDL, które określa, w jaki sposób operacje WSDL są powiązane z metodami Java, gdy komunikat SOAP wywołuje operację WSDL. To odwzorowanie Java na WSDL określa, która metoda Java zostanie wywołana i jak ten komunikat SOAP jest odwzorowany na parametry metody.
+  <br/>  <br/>
+  To mapowanie określa również, w jaki sposób zwracana wartość metody jest mapowana na odpowiedź SOAP.
+  <br/>  <br/>
+  JAX-WS korzysta z adnotacji wprowadzonych w Javie SE 5, aby uprościć tworzenie i wdrażanie klientów i punktów końcowych usług WWW. Jest częścią pakietu Java Web Services Development Pack. JAX-WS może być używany w Javie SE od wersji 6. [1] JAX-WS 2.0 zastąpił JAX-RPC API w Java Platform, Enterprise Edition 5, który bardziej skupia się na usługach internetowych w stylu dokumentów.
+  <br/>  <br/>
+  Ten interfejs API stanowi rdzeń Project Metro w społeczności Open Source Application GlassFish firmy Oracle Corporation.
+  <br/>  <br/>
+  JAX-WS to także jedna z podstaw WSIT.</p>
+
+  <h1 class="text-center" style="font-size: 40px;font-weight: bold"> JAX-RS</h1>
+  <p>
+    JAX-RS, czyli Java API for RESTful Web Services jest specyfikacją zdefiniowaną w platformie Java EE od wersji 6. Obecna wersja 2.0 została wydana w roku 2013 i stanowi element Javy EE 7.
+  </p>
+    <br/>
+    Założeniem JAX-RS było stworzenie API, które wymaga minimalnej konfiguracji, a sama konfiguracja odbywa się przy pomocy prostych adnotacji zastosowanych na poziomie odpowiednich klas i metod będących zwykłymi klasami POJO. W praktyce pozwala to w bardzo prosty sposób udostępnić w swojej aplikacji REST API.
+    <br/><br/>
+  <h2 class="text-center" style="font-size: 30px">Dostępne implementacje</h2>
+    JAXRS jest jedynie specyfikacją, zbiorem reguł, adnotacji oraz interfejsów, które powinny być zaimplementowane. Istnieje kilka bibliotek, które są implementację tego standardu. Referencyjna to biblioteka Jersey jeszcze z czasów firmy Sun. Korzystając z serwerów JBoss/Wildfly napotkamy na RestEASY, a oprócz tego istnieje jeszcze Apache CXF będąca jednocześnie implementacją specyfikacji JAX-WS (Java API for XML Web Services).
+  <br/>
+  <h2 class="text-center" style="font-size: 30px">Dostępne adnotacje</h2>
+    JAXRS definiuje bogaty zestaw wygodnych w użyciu adnotacji, z których najważniejsze to:<br/>
+    @ApplicationPath - definiuje główną ścieżkę aplikacji / api:<br/>
+    @Path - określa ścieżkę do zasobu:<br/>
+    @PathParam - pozwala wykorzystać zmienne w ścieżkach zasobów:<br/>
+    @GET, @POST, @PUT, @DELETE - służą do określenia typu żądania obsługiwanego przez metodę. Poszczególne żądania odpowiadają operacjom CRUD, które chcemy wykonać na zasobie.:<br/>
+    @Consumes / @Produces - określa typ danych (odbieranych i produkowanych) przez dany punkt krańcowy. Na ich podstawie wykonywany jest marshalling lub unmarshalling z/do odpowiedniego typu.:<br/>
+    @QueryParam - mapowanie parametru żądania:<br/>
+    @FormParam - mapowanie parametru z formularza:<br/>
+    JAXB i JSON:<br/>
+    JAX-RS posiada bezpośrednią integrację ze specyfikacją JAXB. Jeśli więc oznaczymy klasę jako @XmlRootElement, to będzie ona mogła stanowić wynik metody obsługującej dany endpoint. Adnotacje JAXB pozwolą nam sterować obiektem produkowanym w wyniku marshallingu zarówno dla formatów XML jak i JSON.:<br/>
 
   <p style="color:red;font-weight: bold;font-size: 25px"> </p>
 </div>
