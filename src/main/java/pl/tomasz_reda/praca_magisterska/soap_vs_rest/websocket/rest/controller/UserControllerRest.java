@@ -22,6 +22,7 @@ public class UserControllerRest {
 
     @PostMapping("/add")
     public ResponseEntity add(@RequestBody UserDto userDto) {
+
         return userService.add(userDto);
     }
 
