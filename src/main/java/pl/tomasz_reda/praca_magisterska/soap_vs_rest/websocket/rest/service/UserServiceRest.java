@@ -55,4 +55,8 @@ public class UserServiceRest {
         } else
             return ResponseEntity.ok(userRepository.findAll(predicate, pageable));
     }
+
+    public User getUserByEmail(String email) {
+        return userRepository.findUserByEmail(email);
+    }
 }

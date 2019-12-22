@@ -1,6 +1,5 @@
 package pl.tomasz_reda.praca_magisterska.soap_vs_rest.data;
 
-import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -16,25 +15,22 @@ import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.UserRepository;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.UserRoleRepository;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 @Component
 public class TestingData implements CommandLineRunner {
 
+    protected static final String[] bookCategories = {"Fantasy", "Biografie/Autobiografie", "Młodzieżowa", "Naukowa", "Sportowa", "Bajka", "Historyczna", "Horror", "Przygodowa", "Inna"};
     @Autowired
     private UserRoleRepository userRoleRepository;
-
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private BookRepository bookRepository;
-
     @Autowired
     private BookCategoryRepository bookCategoryRepository;
-
-    protected static final String[] bookCategories = {"Fantasy", "Biografie/Autobiografie", "Młodzieżowa", "Naukowa", "Sportowa", "Bajka", "Historyczna", "Horror", "Przygodowa", "Inna"};
-
 
     @Override
     public void run(String... args) throws Exception {
@@ -54,6 +50,8 @@ public class TestingData implements CommandLineRunner {
             bookCategoryRepository.save(bookCat);
         }
         User user = null;
+        user = new User(null, "test", "test", "test@op.pl", 1231231, "test", userRoles);
+        userRepository.save(user);
         Book book = null;
         List<BookCategory> bookCategories = new ArrayList<>();
         bookCategories.add(bookCategoryRepository.findAll().get(0));

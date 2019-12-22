@@ -27,5 +27,5 @@ public interface UserRepository extends JpaRepository<User, Long>, QuerydslPredi
 
     Page<User> findAllByFirstnameContainsOrLastnameContains(String firstname, String lastname, Pageable pageable);
 
-
+    User findUserByEmail(String email);
 }

@@ -2,8 +2,16 @@
 <br/>
 <div class="container">
   <h1 class="text-center" style="font-size: 60px;font-weight: bold">9. Bezpieczenstwo</h1>
-
+<p>Nie będe tu opisywał całej konfiguracji ale rest nie ma swojego mechanizmu do logowania i zaimplementowalismy mechanizm spring session. Mamy wystawiony  endpoint do logowania</p>
+  <p>Teraz nie mozemy przejsc pod ten url: </p>
+  <p style="color: #8a6d3b;white-space: pre-line">{{secureEndNoSecure}} </p>
+  <p>Logujemy sie</p>
+  <p style="color: #8a6d3b;white-space: pre-line">{{loginRest}}</p>
+  <p>Uzyskujemy tu token który potem dodajemy do nagłowka</p>
+  <p style="color: #8a6d3b;white-space: pre-line">{{secureEndpointSecure}} </p>
   <p style="color:red;font-weight: bold;font-size: 25px"> </p>
 </div>
 
 
+
+curl -v localhost:8080/api/rest/secure -H 'X-auth-token: 2AF3A2F53BA0E70C699B8807A3D5A284'

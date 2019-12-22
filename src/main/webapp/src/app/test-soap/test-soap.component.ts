@@ -76,9 +76,8 @@ export class TestSoapComponent implements OnInit {
         '\t"password": "GHJbnm123",\n' +
         '\t"userRoles": {"id": 1,"userRole": "CASUAL_USER"}\n' +
         '}';
-      this.http.post(this.url + '/rest/user/add', body, {headers: headers})._subscribe((x) => {
-        console.log(x);
-      });
+      this.http.post(this.url + '/rest/user/add', body, {headers: headers});
+
 
     }
     const dataAfter = new Date();
@@ -97,9 +96,7 @@ export class TestSoapComponent implements OnInit {
     })
 
     const body = 'cos tam';
-    this.http.post('http://localhost:8080/ws', body, {headers: headers})._subscribe((x) => {
-      console.log(x);
-    });
+    this.http.post('http://localhost:8080/ws', body, {headers: headers});
   }
 
 }
