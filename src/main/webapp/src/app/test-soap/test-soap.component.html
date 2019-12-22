@@ -1,3 +1,97 @@
-<p>
-  test-soap works!
-</p>
+<table>
+  <tr>
+    <th>Metoda</th>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+
+
+<br/>
+<div style="color:black;text-align: center">
+
+
+
+
+<form (ngSubmit)="onSubmit()" >
+  <label for="number2">Liczba od(1-5000):</label>
+
+  <input [(ngModel)]="number2" type="number"  id="number2"  name="number2"  min="1" max="5000" [min]="1" [max]="5000" maxlength="5" [maxLength]="5"
+  /><br/>
+  <button type="submit" >Rozpocznij testy</button>
+</form>
+</div>
+<table class="table table-dark table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">METODA</th>
+    <th scope="col">REST CZAS OGOLNY</th>
+    <th scope="col">REST SREDNI CZAS NA 1 ZAPYTANIE</th>
+    <th scope="col">SOAP CZAS OGOLNY</th>
+    <th scope="col"> SOAP SREDNI CZAS NA 1 ZAPYTANIE</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">Dodaj uzytkownika</th>
+    <td>{{addUserRest}}</td>
+    <td>{{addUserRest}}</td>
+    <td>{{addUserSoap}}</td>
+    <td>{{addUserSoap}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Edytuj uzytkownika</th>
+    <td>{{editUserRest}}</td>
+    <td>{{editUserRest}}</td>
+    <td>{{editUserSoap}}</td>
+    <td>{{editUserSoap}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Wyszukaj uzytkownika</th>
+    <td>{{searchUserRest}}</td>
+    <td>{{searchUserRest}}</td>
+    <td>{{searchUserSoap}}</td>
+    <td>{{searchUserSoap}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Usun uzytkownika</th>
+    <td>{{deleteUserRest}}</td>
+    <td>{{deleteUserRest}}</td>
+    <td>{{deleteUserSoap}}</td>
+    <td>{{deleteUserSoap}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Dodaj ksiazke</th>
+    <td>{{addBookRest}}</td>
+    <td>{{addBookRest}}</td>
+    <td>{{addBookSoap}}</td>
+    <td>{{addBookSoap}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Edytuj ksiazke</th>
+    <td>{{editBookRest}}</td>
+    <td>{{editBookRest}}</td>
+    <td>{{editBookSoap}}</td>
+    <td>{{editBookSoap}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Wyszukaj ksiazke</th>
+    <td>{{searchBookRest}}</td>
+    <td>{{searchBookRest}}</td>
+    <td>{{searchBookSoap}}</td>
+    <td>{{searchBookSoap}}</td>
+  </tr>
+  <tr>
+    <th scope="row">Usun ksiazke</th>
+    <td>{{deleteBookRest}}</td>
+    <td>{{deleteBookRest}}</td>
+    <td>{{deleteBookSoap}}</td>
+    <td>{{deleteBookSoap}}</td>
+  </tr>
+
+  </tbody>
+</table>
+
+
+
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-test-soap',
@@ -7,9 +7,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestSoapComponent implements OnInit {
 
-  constructor() { }
+  number2: number = 1;
+  addUserRest = '';
+  addUserSoap = '';
+  editUserRest = '';
+  editUserSoap = '';
+  searchUserRest = '';
+  searchUserSoap = '';
+  deleteUserRest = '';
+  deleteUserSoap = '';
+  addBookRest = '';
+  addBookSoap = '';
+  editBookRest = '';
+  editBookSoap = '';
+  searchBookRest = '';
+  searchBookSoap = '';
+  deleteBookRest = '';
+  deleteBookSoap = '';
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+
+  onSubmit() {
+  }
+
+  addUserRest() {
+
   }
 
 }
