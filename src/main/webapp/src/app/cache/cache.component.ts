@@ -62,7 +62,7 @@ export class CacheComponent implements OnInit {
      '    }\n' +
      '}\n'
 
-  restQuery='curl -v localhost:8080/api/rest/book-catey/find';
+  restQuery='curl -v localhost:8080/api/rest/book-category/find';
    soapQuery='curl -X POST http://localhost:8080/ws -H \'Content-Type: text/xml\' -H \'SOAPAction: blz:getBank\' -d \' <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="https://www.praca_magister/soap_vs_rest/books.com">\n' +
      '                 <soapenv:Header/>\n' +
      '                 <soapenv:Body>\n' +

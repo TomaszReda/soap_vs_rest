@@ -19,9 +19,6 @@ public class BookControllerRest {
     @Autowired
     private BookServiceRest bookService;
 
-    @Autowired
-    private BookCategoryRepository bookCategoryRepository;
-
     @PostMapping("/add")
     public ResponseEntity add(@RequestBody BookDto bookDto) {
         return bookService.add(bookDto);
