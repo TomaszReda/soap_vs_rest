@@ -11,6 +11,10 @@ import { FormatComponent } from './format/format.component';
 import { CacheComponent } from './cache/cache.component';
 import { ProtocolComponent } from './protocol/protocol.component';
 import { ConfigComponent } from './config/config.component';
+import { SecurityComponent } from './security/security.component';
+import { EfficiencyComponent } from './efficiency/efficiency.component';
+import { DataSizeComponent } from './data-size/data-size.component';
+import { DaneComponent } from './dane/dane.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { ConfigComponent } from './config/config.component';
     FormatComponent,
     CacheComponent,
     ProtocolComponent,
-    ConfigComponent],
+    ConfigComponent,
+    SecurityComponent,
+    EfficiencyComponent,
+    DataSizeComponent,
+    DaneComponent],
   imports: [
     BrowserModule,
     AppRoutingModule

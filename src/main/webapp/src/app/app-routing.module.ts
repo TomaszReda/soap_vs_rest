@@ -10,8 +10,28 @@ import {FormatComponent} from "./format/format.component";
 import {CacheComponent} from "./cache/cache.component";
 import {ProtocolComponent} from "./protocol/protocol.component";
 import {ConfigComponent} from "./config/config.component";
+import {EfficiencyComponent} from "./efficiency/efficiency.component";
+import {SecurityComponent} from "./security/security.component";
+import {DataSizeComponent} from "./data-size/data-size.component";
+import {DaneComponent} from "./dane/dane.component";
 
 const appRoutes: Routes = [
+  {
+    path: 'wydajnosc',
+    component: EfficiencyComponent
+  },
+  {
+    path: 'rozmiar-danych',
+    component: DataSizeComponent
+  },
+  {
+    path: 'dane',
+    component: DaneComponent
+  },
+  {
+    path: 'bezpieczenstwo',
+    component: SecurityComponent
+  },
   {
     path: 'stanowosc',
     component: StateComponent,
@@ -33,7 +53,7 @@ const appRoutes: Routes = [
     component: IntroductionComponent,
   },
   {
-    path: 'wydajnosc',
+    path: 'definicje',
     component: PerformanceComponent,
   },
   {
