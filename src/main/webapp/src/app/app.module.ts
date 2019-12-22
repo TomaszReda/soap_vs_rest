@@ -15,6 +15,10 @@ import { SecurityComponent } from './security/security.component';
 import { EfficiencyComponent } from './efficiency/efficiency.component';
 import { DataSizeComponent } from './data-size/data-size.component';
 import { DaneComponent } from './dane/dane.component';
+import { JavaapiComponent } from './javaapi/javaapi.component';
+import { SerwerComponent } from './serwer/serwer.component';
+import { UseComponent } from './use/use.component';
+import { UtilizationComponent } from './utilization/utilization.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { DaneComponent } from './dane/dane.component';
     SecurityComponent,
     EfficiencyComponent,
     DataSizeComponent,
-    DaneComponent],
+    DaneComponent,
+    JavaapiComponent,
+    SerwerComponent,
+    UseComponent,
+    UtilizationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule

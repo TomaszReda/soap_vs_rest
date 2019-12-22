@@ -14,8 +14,32 @@ import {EfficiencyComponent} from "./efficiency/efficiency.component";
 import {SecurityComponent} from "./security/security.component";
 import {DataSizeComponent} from "./data-size/data-size.component";
 import {DaneComponent} from "./dane/dane.component";
+import {JavaapiComponent} from "./javaapi/javaapi.component";
+import {SerwerComponent} from "./serwer/serwer.component";
+import {UtilizationComponent} from "./utilization/utilization.component";
+import {UseComponent} from "./use/use.component";
 
 const appRoutes: Routes = [
+  {
+    path: 'javaAPI',
+    component: JavaapiComponent
+  },
+  {
+    path: 'serwer',
+    component: SerwerComponent
+  },
+  {
+    path: 'wykorzystanie',
+    component: UtilizationComponent
+  },
+  {
+    path: 'zastosowania',
+    component: UseComponent
+  },
+  {
+    path: 'wydajnosc',
+    component: EfficiencyComponent
+  },
   {
     path: 'wydajnosc',
     component: EfficiencyComponent
