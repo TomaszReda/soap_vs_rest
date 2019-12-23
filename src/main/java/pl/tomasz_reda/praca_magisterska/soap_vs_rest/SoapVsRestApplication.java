@@ -7,6 +7,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 
 @SpringBootApplication
 @EnableCaching
@@ -15,37 +16,63 @@ public class SoapVsRestApplication {
     public static void main(String[] args) throws Exception {
 
         String json = "";
-//        json += "{\n";
-//        String constText = "";
-//        for (int i = 0; i < 15000; i++) {
-//            constText += " a";
-//        }
-//        for (int i = 1; i <= 300; i++) {
-//            if (i == 300) {
-//                json += "\"field" + i + "\": \"" + constText + "\"";
-//            } else {
-//                json += "\"field" + i + "\": \"" + constText + "\",\n";
-//            }
-//        }
-//        json += "\n}";
-//        System.err.println(json);
-
-
         json += "{\n";
         String constText = "";
-        for (int i = 0; i < 15000; i++) {
+        Random random = new Random();
+        int czynnik=100000;
+        for (int i = 0; i < czynnik; i++) {
             constText += " a";
         }
-        for (int i = 1; i <= 300; i++) {
-            json += "<sch:field" + i + ">" + constText + "</sch:field" + i + ">\n";
+        for (int i = 1; i <= 100; i++) {
+            json += "\"field" + i + "\": \"" + constText + "\",\n";
         }
+
+        for (int i = 1; i <= 2; i++) {
+            json += "\"list" + i + "\":[";
+            for (int j = 0; j < 20; j++) {
+
+                if (j == 19)
+                    json += "\"" + constText + "\"";
+                else {
+                    json += "\"" + constText + "\",";
+                }
+            }
+            json += "],\n";
+        }
+
+        String testObjectTekst = "";
+        for (int i = 0; i < czynnik; i++) {
+            testObjectTekst += "a ";
+        }
+        for (int i = 1; i <= 2; i++) {
+            json += "\"testOtherObject" + i + "\": \n{\n";
+            for (int j = 1; j <= 4; j++) {
+                if (j == 4) {
+                    json += "\"list\":[";
+                    for (int e = 0; e < 20; e++) {
+
+                        if (e == 19)
+                            json += "\"" + testObjectTekst + "\"";
+                        else {
+                            json += "\"" + testObjectTekst + "\",";
+                        }
+                    }
+                    json += "]\n}";
+                } else {
+                    json += "\"testField" + j + "\": \"" + testObjectTekst + "\",\n";
+                }
+            }
+            if(i==1){
+                json+=",\n";
+            }
+        }
+
+
         json += "\n}";
         System.err.println(json);
 
-        System.err.println(json);
 
-
-        String yourfilename = "test.txt";
+        String yourfilename = "testRest.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));
