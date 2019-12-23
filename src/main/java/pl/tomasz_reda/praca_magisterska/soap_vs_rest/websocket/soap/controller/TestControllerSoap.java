@@ -12,7 +12,7 @@ public class TestControllerSoap {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "TestRequest")
     @ResponsePayload
-    public void test(@RequestPayload soap.TestRequest request) {
-        System.err.println("soap");
+    public soap.TestRequest test(@RequestPayload soap.TestRequest request) {
+        return request;
     }
 }

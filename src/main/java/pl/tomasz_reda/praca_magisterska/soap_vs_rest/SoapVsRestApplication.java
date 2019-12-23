@@ -14,12 +14,97 @@ import java.util.Random;
 public class SoapVsRestApplication {
 
     public static void main(String[] args) throws Exception {
+        genereateSoap();
 
+
+        SpringApplication.run(SoapVsRestApplication.class, args);
+    }
+
+
+    private static void genereateSoap() {
+        String json = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sch=\"https://www.praca_magister/soap_vs_rest/test.com\">\n" +
+                "<soapenv:Header>\n" +
+                "  <wsse:Security \n" +
+                "    xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" \n" +
+                "    xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"\n" +
+                "    soapenv:mustUnderstand=\"1\">\n" +
+                "    <wsse:UsernameToken xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n" +
+                "      <wsse:Username>admin</wsse:Username>\n" +
+                "      <wsse:Password Type=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText\">secret</wsse:Password>\n" +
+                "    </wsse:UsernameToken>\n" +
+                "\t<wsu:Timestamp xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n" +
+                "\t</wsu:Timestamp>\n" +
+                "  </wsse:Security>\n" +
+                "</soapenv:Header>\n" +
+                "<soapenv:Body>\n" +
+                "<sch:TestRequest>";
+        String constText = "";
+        Random random = new Random();
+        int czynnik = 100;
+        for (int i = 0; i < czynnik; i++) {
+            constText += " a";
+        }
+        for (int i = 1; i <= 100; i++) {
+            json += "<sch:field" + i + ">" + constText + "</sch:field" + i + ">\n";
+        }
+
+        for (int i = 1; i <= 2; i++) {
+            for (int j = 0; j < 20; j++) {
+
+                    json += "<sch:list" + i + ">" + constText + "</sch:list" + i + ">\n";
+            }
+        }
+
+        String testObjectTekst = "";
+        for (int i = 0; i < czynnik; i++) {
+            testObjectTekst += "a ";
+        }
+        for (int i = 1; i <= 2; i++) {
+            json += "<sch:testOtherObject" + i + ">\n";
+            for (int j = 1; j <= 4; j++) {
+                if (j == 4) {
+                    for (int e = 0; e < 20; e++) {
+
+                            json += "<sch:list>" + testObjectTekst +  "</sch:list>\n";
+
+                    }
+                } else {
+                    json += "<sch:testField" + j + ">" + testObjectTekst + "</sch:testField" + j + ">\n";
+                }
+            }
+            json += "</sch:testOtherObject" + i + ">\n";
+
+        }
+        json += "\n</sch:TestRequest>\n" +
+                "</soapenv:Body>\n" +
+                "</soapenv:Envelope>";
+        System.err.println(json);
+
+
+        String yourfilename = "testSoap.txt";
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(yourfilename));
+            writer.write(json);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (writer != null)
+                    writer.close();
+            } catch (IOException e) {
+            }
+        }
+
+    }
+
+    private void generateRest() {
         String json = "";
         json += "{\n";
         String constText = "";
         Random random = new Random();
-        int czynnik=100000;
+        int czynnik = 100000;
         for (int i = 0; i < czynnik; i++) {
             constText += " a";
         }
@@ -62,12 +147,10 @@ public class SoapVsRestApplication {
                     json += "\"testField" + j + "\": \"" + testObjectTekst + "\",\n";
                 }
             }
-            if(i==1){
-                json+=",\n";
+            if (i == 1) {
+                json += ",\n";
             }
         }
-
-
         json += "\n}";
         System.err.println(json);
 
@@ -88,7 +171,6 @@ public class SoapVsRestApplication {
             }
         }
 
-        SpringApplication.run(SoapVsRestApplication.class, args);
     }
 
 }

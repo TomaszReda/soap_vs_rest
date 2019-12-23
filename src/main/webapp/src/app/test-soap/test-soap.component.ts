@@ -69,8 +69,8 @@ export class TestSoapComponent implements OnInit {
     const dataBefore = new Date();
     for (let i = 0; i < this.number2; i++) {
       const body = '';
-      this.http.post(this.url + '/rest/user/add', body, {headers: headers})._subscribe((x: any) => {
-      });
+      // this.http.post(this.url + '/rest/user/add', body, {headers: headers})._subscribe((x: any) => {
+      // });
     }
     const dataAfter = new Date();
     const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
@@ -89,8 +89,8 @@ export class TestSoapComponent implements OnInit {
     })
     for (let i = 0; i < this.number2; i++) {
       const body = '';
-      this.http.post('http://localhost:8080/ws', body, {headers: headers})._subscribe(x => {
-      });
+      // this.http.post('http://localhost:8080/ws', body, {headers: headers})._subscribe(x => {
+      // });
     }
     const dataAfter = new Date();
     const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
