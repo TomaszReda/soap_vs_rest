@@ -36,16 +36,10 @@ export class TestSoapComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getTranslation('./assets/testREST.txt').subscribe(x => {
-      this.bodyRest = x.body
+    this.getTranslation('./assets/testREST.txt').subscribe((x:any) => {
+      this.bodyRest = x;
     });
 
-    this.getTranslation('./assets/TestRequestSendOnlySOAP.txt').subscribe(x => {
-      this.bodySoapReceiv = x.body;
-    })
-    this.getTranslation('./assets/TestRequestSendAndReceivRequestSOAP.txt').subscribe(x => {
-      this.bodySoapSend = x.body;
-    })
   }
 
 
@@ -53,8 +47,8 @@ export class TestSoapComponent implements OnInit {
     this.resetAll();
     this.addTestRestFunctionSendOnly();
     this.addTestRestFunctionSendAndReceiv();
-    this.addTestSoapOnlySend();
-    this.addTestSoapSendAndReceiv();
+    // this.addTestSoapOnlySend();
+    // this.addTestSoapSendAndReceiv();
 
   }
 
@@ -67,12 +61,11 @@ export class TestSoapComponent implements OnInit {
     }
     const dataAfter = new Date();
     const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addTestDataOnlySendRest = dif;
+    this.addTestDataOnlySendRest += dif;
   }
 
 
   addTestRestFunctionSendAndReceiv() {
-    console.log(this.bodyRest);
     const headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
     const dataBefore = new Date();
 
@@ -82,7 +75,7 @@ export class TestSoapComponent implements OnInit {
     }
     const dataAfter = new Date();
     const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addTestDataSendAndReceivRest = dif;
+    this.addTestDataSendAndReceivRest += dif;
   }
 
   addTestSoapOnlySend() {
@@ -100,7 +93,7 @@ export class TestSoapComponent implements OnInit {
     }
     const dataAfter = new Date();
     const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addTestDataOnlySendSoap = dif;
+    this.addTestDataOnlySendSoap += dif;
   }
 
 
@@ -119,7 +112,7 @@ export class TestSoapComponent implements OnInit {
     }
     const dataAfter = new Date();
     const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addTestDataOnlySendAndReceivSoap = dif;
+    this.addTestDataOnlySendAndReceivSoap += dif;
   }
 
 
