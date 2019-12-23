@@ -68,15 +68,7 @@ export class TestSoapComponent implements OnInit {
     const headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8', 'dddd': 'bbbb'});
     const dataBefore = new Date();
     for (let i = 0; i < this.number2; i++) {
-      const body = '{\n' +
-        '\t"id": "",\n' +
-        '\t"firstname": "test",\n' +
-        '\t"lastname": "test",\n' +
-        '\t"email": "test0@op.pl",\n' +
-        '\t"phoneNumber": 1231231,\n' +
-        '\t"password": "GHJbnm123",\n' +
-        '\t"userRoles": {"id": 1,"userRole": "CASUAL_USER"}\n' +
-        '}';
+      const body = '';
       this.http.post(this.url + '/rest/user/add', body, {headers: headers})._subscribe((x: any) => {
       });
     }
@@ -96,38 +88,7 @@ export class TestSoapComponent implements OnInit {
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
     })
     for (let i = 0; i < this.number2; i++) {
-      const body = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="https://www.praca_magister/soap_vs_rest/users.com">\n' +
-        '<soapenv:Header>\n' +
-        '  <wsse:Security \n' +
-        '    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" \n' +
-        '    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"\n' +
-        '    soapenv:mustUnderstand="1">\n' +
-        '    \n' +
-        '    <wsse:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\n' +
-        '      <wsse:Username>admin</wsse:Username>\n' +
-        '      <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">secret</wsse:Password>\n' +
-        '    </wsse:UsernameToken>\n' +
-        '    \n' +
-        '\t<wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\n' +
-        '\t</wsu:Timestamp>\n' +
-        '    \n' +
-        '  </wsse:Security>\n' +
-        '</soapenv:Header>\n' +
-        '   \n' +
-        '<soapenv:Body>\n' +
-        '<sch:AddUserRequest>\n' +
-        '<sch:firstname>tomek</sch:firstname>\n' +
-        '<sch:lastname>reda</sch:lastname>\n' +
-        '<sch:phoneNumber>123123123</sch:phoneNumber>\n' +
-        '<sch:password>password</sch:password>\n' +
-        '<sch:email>email@com.pl</sch:email>\n' +
-        '<sch:userRoles>\n' +
-        '<sch:id>1</sch:id>\n' +
-        '<sch:userRole>ADMIN</sch:userRole>\n' +
-        '</sch:userRoles>\n' +
-        '</sch:AddUserRequest>\n' +
-        '</soapenv:Body>\n' +
-        '</soapenv:Envelope>';
+      const body = '';
       this.http.post('http://localhost:8080/ws', body, {headers: headers})._subscribe(x => {
       });
     }
