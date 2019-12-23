@@ -4,10 +4,7 @@ import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-import soap.TestRequest;
-
-import java.util.ArrayList;
-import java.util.List;
+import soap.TestRequestSendAndReceivResponse;
 
 @Endpoint
 public class TestControllerSoap {
@@ -16,17 +13,18 @@ public class TestControllerSoap {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "TestRequestSendOnly")
     public void test(@RequestPayload soap.TestRequestSendOnly request) {
-
     }
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "TestRequestSendAndReceiv")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "TestRequestSendAndReceivRequest")
     @ResponsePayload
-    public List<soap.TestRequestSendAndReceiv> test2(@RequestPayload soap.TestRequestSendAndReceiv request) {
-        List<soap.TestRequestSendAndReceiv> testRequests = new ArrayList<>();
-        testRequests.add(request);
-        testRequests.add(request);
-        return testRequests;
+    public soap.TestRequestSendAndReceivResponse test2(@RequestPayload soap.TestRequestSendAndReceivRequest request) {
+        soap.TestRequestSendAndReceivResponse testRequestSendAndReceivResponse = new TestRequestSendAndReceivResponse();
+        testRequestSendAndReceivResponse.getList().add(request.getTestObjectMain());
+        testRequestSendAndReceivResponse.getList().add(request.getTestObjectMain());
+        testRequestSendAndReceivResponse.getList().add(request.getTestObjectMain());
+
+        return testRequestSendAndReceivResponse;
     }
 
 }

@@ -23,8 +23,7 @@ public class TestControllerRest {
         List<TestDto> testDtos=new ArrayList<>();
         testDtos.add(testDto);
         testDtos.add(testDto);
-        System.err.println("aaaa");
-        System.err.println(testDtos);
+        testDtos.add(testDto);
         return testDtos;
     }
 
