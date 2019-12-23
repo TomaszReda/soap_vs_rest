@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-test-soap',
@@ -15,70 +16,76 @@ export class TestSoapComponent implements OnInit {
   }
 
   number2: number = 1;
-  addUserRest = '';
-  addUserSoap = '';
-  editUserRest = '';
-  editUserSoap = '';
-  searchUserRest = '';
-  searchUserSoap = '';
-  deleteUserRest = '';
-  deleteUserSoap = '';
-  addBookRest = '';
-  addBookSoap = '';
-  editBookRest = '';
-  editBookSoap = '';
-  searchBookRest = '';
-  searchBookSoap = '';
-  deleteBookRest = '';
-  deleteBookSoap = '';
-
+  addTestDataOnlySendRest = '';
+  addTestDataOnlySendSoap = '';
+  addTestDataSendAndReceivRest = '';
+  addTestDataOnlySendAndReceivSoap = '';
+  bodyRest = '';
+  bodySoapReceiv = '';
+  bodySoapSend = '';
 
   resetAll() {
-    this.addUserRest = '';
-    this.addUserSoap = '';
-    this.editUserRest = '';
-    this.editUserSoap = '';
-    this.searchUserRest = '';
-    this.searchUserSoap = '';
-    this.deleteUserRest = '';
-    this.deleteUserSoap = '';
-    this.addBookRest = '';
-    this.addBookSoap = '';
-    this.editBookRest = '';
-    this.editBookSoap = '';
-    this.searchBookRest = '';
-    this.searchBookSoap = '';
-    this.deleteBookRest = '';
-    this.deleteBookSoap = '';
+    this.addTestDataOnlySendRest = '';
+    this.addTestDataOnlySendSoap = '';
+    this.addTestDataSendAndReceivRest = '';
+    this.addTestDataOnlySendAndReceivSoap = '';
+  }
+
+  public getTranslation(data: string): Observable<any> {
+    return this.http.get(data);
   }
 
   ngOnInit() {
+    this.getTranslation('./assets/testREST.txt').subscribe(x => {
+      this.bodyRest = x.body
+    });
+
+    this.getTranslation('./assets/TestRequestSendOnlySOAP.txt').subscribe(x => {
+      this.bodySoapReceiv = x.body;
+    })
+    this.getTranslation('./assets/TestRequestSendAndReceivRequestSOAP.txt').subscribe(x => {
+      this.bodySoapSend = x.body;
+    })
   }
 
 
   onSubmit() {
     this.resetAll();
-    this.addUserRestFunction();
-    this.addUserSOAPFunction();
+    this.addTestRestFunctionSendOnly();
+    this.addTestRestFunctionSendAndReceiv();
+    this.addTestSoapOnlySend();
+    this.addTestSoapSendAndReceiv();
 
   }
 
-  addUserRestFunction() {
-    console.log('aa');
-    const headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8', 'dddd': 'bbbb'});
+  addTestRestFunctionSendOnly() {
+    const headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
     const dataBefore = new Date();
     for (let i = 0; i < this.number2; i++) {
-      const body = '';
-      // this.http.post(this.url + '/rest/user/add', body, {headers: headers})._subscribe((x: any) => {
-      // });
+      this.http.post(this.url + '/rest/test/send-only', this.bodyRest, {headers: headers}).subscribe((x: any) => {
+      });
     }
     const dataAfter = new Date();
     const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addUserRest = dif;
+    this.addTestDataOnlySendRest = dif;
   }
 
 
-  addUserSOAPFunction() {
+  addTestRestFunctionSendAndReceiv() {
+    console.log(this.bodyRest);
+    const headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
+    const dataBefore = new Date();
+
+    for (let i = 0; i < this.number2; i++) {
+      this.http.post(this.url + '/rest/test/send-and-receiv', this.bodyRest, {headers: headers}).subscribe((x: any) => {
+      });
+    }
+    const dataAfter = new Date();
+    const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
+    this.addTestDataSendAndReceivRest = dif;
+  }
+
+  addTestSoapOnlySend() {
     const dataBefore = new Date();
 
     const headers = new HttpHeaders({
@@ -88,14 +95,36 @@ export class TestSoapComponent implements OnInit {
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
     })
     for (let i = 0; i < this.number2; i++) {
-      const body = '';
-      // this.http.post('http://localhost:8080/ws', body, {headers: headers})._subscribe(x => {
-      // });
+      this.http.post('http://localhost:8080/ws', this.bodySoapSend, {headers: headers}).subscribe(x => {
+      });
     }
     const dataAfter = new Date();
     const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addUserSoap = dif;
+    this.addTestDataOnlySendSoap = dif;
   }
+
+
+  addTestSoapSendAndReceiv() {
+    const dataBefore = new Date();
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'text/xml; charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'PUT, GET, POST, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+    })
+    for (let i = 0; i < this.number2; i++) {
+      this.http.post('http://localhost:8080/ws', this.bodySoapReceiv, {headers: headers}).subscribe(x => {
+      });
+    }
+    const dataAfter = new Date();
+    const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
+    this.addTestDataOnlySendAndReceivSoap = dif;
+  }
+
+
+
+
 
 }
 

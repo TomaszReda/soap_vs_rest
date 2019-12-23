@@ -84,7 +84,7 @@ public class SoapVsRestApplication {
                 "</soapenv:Envelope>";
 
 
-        String yourfilename = name + "SOAP.txt";
+        String yourfilename = "./src/main/webapp/src/assets/" + name + "SOAP.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));
@@ -156,7 +156,7 @@ public class SoapVsRestApplication {
         json += "\n}";
 
 
-        String yourfilename = "testREST.txt";
+        String yourfilename = "./src/main/webapp/src/assets/" + "testREST.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));
