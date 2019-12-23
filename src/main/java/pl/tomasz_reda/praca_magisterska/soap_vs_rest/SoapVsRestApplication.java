@@ -15,7 +15,7 @@ public class SoapVsRestApplication {
 
     public static void main(String[] args) throws Exception {
         genereateSoap();
-
+        generateRest();
 
         SpringApplication.run(SoapVsRestApplication.class, args);
     }
@@ -40,7 +40,7 @@ public class SoapVsRestApplication {
                 "<sch:TestRequest>";
         String constText = "";
         Random random = new Random();
-        int czynnik = 100;
+        int czynnik = 300000;
         for (int i = 0; i < czynnik; i++) {
             constText += " a";
         }
@@ -78,7 +78,6 @@ public class SoapVsRestApplication {
         json += "\n</sch:TestRequest>\n" +
                 "</soapenv:Body>\n" +
                 "</soapenv:Envelope>";
-        System.err.println(json);
 
 
         String yourfilename = "testSoap.txt";
@@ -99,7 +98,7 @@ public class SoapVsRestApplication {
 
     }
 
-    private void generateRest() {
+    private static void generateRest() {
         String json = "";
         json += "{\n";
         String constText = "";
@@ -152,7 +151,6 @@ public class SoapVsRestApplication {
             }
         }
         json += "\n}";
-        System.err.println(json);
 
 
         String yourfilename = "testRest.txt";
