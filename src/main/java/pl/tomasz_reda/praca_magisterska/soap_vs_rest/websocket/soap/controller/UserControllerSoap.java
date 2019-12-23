@@ -37,7 +37,6 @@ public class UserControllerSoap {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "GetUserRequest")
     @ResponsePayload
     public soap.GetUserResponse getUser(@RequestPayload soap.GetUserRequest request) {
-
         return userServiceSoap.getUser(request);
     }
 
