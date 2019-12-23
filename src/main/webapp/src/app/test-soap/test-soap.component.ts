@@ -15,6 +15,7 @@ export class TestSoapComponent implements OnInit {
   constructor(private http: HttpClient) {
   }
 
+
   number2: number = 1;
   addTestDataOnlySendRest = '';
   addTestDataOnlySendSoap = '';
@@ -36,19 +37,29 @@ export class TestSoapComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getTranslation('./assets/testREST.txt').subscribe((x:any) => {
+    this.getTranslation('./assets/testREST.txt').subscribe((x: any) => {
       this.bodyRest = x;
     });
+    this.http.get('./assets/TestRequestSendOnlySOAP.txt', {responseType: 'text'})
+      .subscribe(data => {
+        this.bodySoapSend = data;
+      });
+    this.http.get('./assets/TestRequestSendAndReceivRequestSOAP.txt', {responseType: 'text'})
+      .subscribe(data => {
+        this.bodySoapReceiv = data;
+      });
+
 
   }
 
 
   onSubmit() {
     this.resetAll();
+
     this.addTestRestFunctionSendOnly();
     this.addTestRestFunctionSendAndReceiv();
-    // this.addTestSoapOnlySend();
-    // this.addTestSoapSendAndReceiv();
+    this.addTestSoapOnlySend();
+    this.addTestSoapSendAndReceiv();
 
   }
 
@@ -57,11 +68,12 @@ export class TestSoapComponent implements OnInit {
     const dataBefore = new Date();
     for (let i = 0; i < this.number2; i++) {
       this.http.post(this.url + '/rest/test/send-only', this.bodyRest, {headers: headers}).subscribe((x: any) => {
+        const dataAfter = new Date();
+        const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
+        this.addTestDataOnlySendRest += dif;
       });
     }
-    const dataAfter = new Date();
-    const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addTestDataOnlySendRest += dif;
+
   }
 
 
@@ -71,11 +83,12 @@ export class TestSoapComponent implements OnInit {
 
     for (let i = 0; i < this.number2; i++) {
       this.http.post(this.url + '/rest/test/send-and-receiv', this.bodyRest, {headers: headers}).subscribe((x: any) => {
+        const dataAfter = new Date();
+        const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
+        this.addTestDataSendAndReceivRest += dif;
       });
     }
-    const dataAfter = new Date();
-    const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addTestDataSendAndReceivRest += dif;
+
   }
 
   addTestSoapOnlySend() {
@@ -89,11 +102,12 @@ export class TestSoapComponent implements OnInit {
     })
     for (let i = 0; i < this.number2; i++) {
       this.http.post('http://localhost:8080/ws', this.bodySoapSend, {headers: headers}).subscribe(x => {
+        const dataAfter = new Date();
+        const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
+        this.addTestDataOnlySendSoap += dif;
       });
     }
-    const dataAfter = new Date();
-    const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addTestDataOnlySendSoap += dif;
+
   }
 
 
@@ -108,15 +122,13 @@ export class TestSoapComponent implements OnInit {
     })
     for (let i = 0; i < this.number2; i++) {
       this.http.post('http://localhost:8080/ws', this.bodySoapReceiv, {headers: headers}).subscribe(x => {
+        const dataAfter = new Date();
+        const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
+        this.addTestDataOnlySendAndReceivSoap += dif;
       });
     }
-    const dataAfter = new Date();
-    const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
-    this.addTestDataOnlySendAndReceivSoap += dif;
+
   }
-
-
-
 
 
 }
