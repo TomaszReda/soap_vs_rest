@@ -14,14 +14,15 @@ import java.util.Random;
 public class SoapVsRestApplication {
 
     public static void main(String[] args) throws Exception {
-        genereateSoap();
-        generateRest();
+//        genereateSoap("TestRequestSendOnly");
+//        genereateSoap("TestRequestSendAndReceiv");
+//        generateRest();
 
         SpringApplication.run(SoapVsRestApplication.class, args);
     }
 
 
-    private static void genereateSoap() {
+    private static void genereateSoap(String name) {
         String json = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sch=\"https://www.praca_magister/soap_vs_rest/test.com\">\n" +
                 "<soapenv:Header>\n" +
                 "  <wsse:Security \n" +
@@ -37,10 +38,10 @@ public class SoapVsRestApplication {
                 "  </wsse:Security>\n" +
                 "</soapenv:Header>\n" +
                 "<soapenv:Body>\n" +
-                "<sch:TestRequest>";
+                "<sch:" + name + ">";
         String constText = "";
         Random random = new Random();
-        int czynnik = 300000;
+        int czynnik = 100000;
         for (int i = 0; i < czynnik; i++) {
             constText += " a";
         }
@@ -51,7 +52,7 @@ public class SoapVsRestApplication {
         for (int i = 1; i <= 2; i++) {
             for (int j = 0; j < 20; j++) {
 
-                    json += "<sch:list" + i + ">" + constText + "</sch:list" + i + ">\n";
+                json += "<sch:list" + i + ">" + constText + "</sch:list" + i + ">\n";
             }
         }
 
@@ -65,7 +66,7 @@ public class SoapVsRestApplication {
                 if (j == 4) {
                     for (int e = 0; e < 20; e++) {
 
-                            json += "<sch:list>" + testObjectTekst +  "</sch:list>\n";
+                        json += "<sch:list>" + testObjectTekst + "</sch:list>\n";
 
                     }
                 } else {
@@ -75,12 +76,12 @@ public class SoapVsRestApplication {
             json += "</sch:testOtherObject" + i + ">\n";
 
         }
-        json += "\n</sch:TestRequest>\n" +
+        json += "\n</sch:" + name + ">\n" +
                 "</soapenv:Body>\n" +
                 "</soapenv:Envelope>";
 
 
-        String yourfilename = "testSoap.txt";
+        String yourfilename = name + "SOAP.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));
@@ -153,7 +154,7 @@ public class SoapVsRestApplication {
         json += "\n}";
 
 
-        String yourfilename = "testRest.txt";
+        String yourfilename = "testREST.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));

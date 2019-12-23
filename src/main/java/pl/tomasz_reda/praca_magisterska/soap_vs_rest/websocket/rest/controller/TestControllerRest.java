@@ -18,13 +18,18 @@ public class TestControllerRest {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("/test")
+    @PostMapping("/test/send-and-receiv")
     public List<TestDto> test(@RequestBody TestDto testDto) {
-
         List<TestDto> testDtos=new ArrayList<>();
         testDtos.add(testDto);
         testDtos.add(testDto);
+        System.err.println("aaaa");
+        System.err.println(testDtos);
         return testDtos;
     }
 
+
+    @PostMapping("/test/send-only")
+    public void test2(@RequestBody TestDto testDto) {
+    }
 }
