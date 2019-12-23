@@ -22,7 +22,7 @@ public class SoapVsRestApplication {
     }
 
     private static int czynnik() {
-        return 100000;
+        return 200000;
     }
 
     private static void genereateSoap(String name) {

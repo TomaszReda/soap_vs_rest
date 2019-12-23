@@ -55,12 +55,14 @@ export class TestSoapComponent implements OnInit {
 
   onSubmit() {
     this.resetAll();
-
-    this.addTestRestFunctionSendOnly();
-    this.addTestRestFunctionSendAndReceiv();
     this.addTestSoapOnlySend();
     this.addTestSoapSendAndReceiv();
+    this.addTestRestFunctionSendOnly();
+    this.addTestRestFunctionSendAndReceiv();
+  }
 
+   delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
   addTestRestFunctionSendOnly() {
@@ -101,7 +103,7 @@ export class TestSoapComponent implements OnInit {
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
     })
     for (let i = 0; i < this.number2; i++) {
-      this.http.post('http://localhost:8080/ws', this.bodySoapSend, {headers: headers}).subscribe(x => {
+      this.http.post('http://localhost:8080/ws', this.bodySoapSend, {headers: headers,responseType: "text"}).subscribe(x => {
         const dataAfter = new Date();
         const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
         this.addTestDataOnlySendSoap += dif;
@@ -116,12 +118,14 @@ export class TestSoapComponent implements OnInit {
 
     const headers = new HttpHeaders({
       'Content-Type': 'text/xml; charset=utf-8',
+      'Accept': 'text/xml',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'PUT, GET, POST, DELETE, OPTIONS',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
     })
+
     for (let i = 0; i < this.number2; i++) {
-      this.http.post('http://localhost:8080/ws', this.bodySoapReceiv, {headers: headers}).subscribe(x => {
+      this.http.post('http://localhost:8080/ws', this.bodySoapReceiv, {headers: headers,responseType: "text"}).subscribe(x => {
         const dataAfter = new Date();
         const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000 + '';
         this.addTestDataOnlySendAndReceivSoap += dif;
