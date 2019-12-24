@@ -85,12 +85,8 @@ const appRoutes: Routes = [
     component: TestSoapComponent,
   },
   {
-    path: 'home',
-    component: AppComponent,
-  },
-  {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'wstep',
     pathMatch: 'full'
   },
   {

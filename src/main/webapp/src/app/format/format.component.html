@@ -12,7 +12,7 @@
     ze przy wystawianiu endpointa:<br/>
     '@PostMapping(value = "/add",consumes = MediaType.APPLICATION_JSON,produces = MediaTyspe.APPLICATION_JSON'
     <br/>
-    Padajemy jaki typ ma przyjmowac i jaki typ ma zwracac. U nas jest to json ze wzgledu na jego rozmiar. Ale rownie
+    Padajemy jaki typ ma przyjmowac i jaki typ ma zwracac. U nas jest to json ze wzgledu na jego rozmiar, czytelność, prostote. Ale rownie
     dobrze moglby to byc xml html czy yaml
   </p>
   <p>
@@ -20,16 +20,18 @@
   <p style="white-space: pre-line"><b style="color: #4cae4c">{{restJSON}}</b></p>
   <p>
   Widzimy ze zapytanie SOAPOWE jest o wiele wieksze niz restowe.
-  <p>Jak by wyglada content dla HTML:</p>
+  <p>Jak by wyglądał by content dla HTML:</p>
   <p style=" white-space: pre-line"><b style="color: #8a6d3b">{{restHTML}}</b></p>
   <p>
-  <p>Jak by wyglada content dla YAML:</p>
+  <p>Jak by wyglądał by content dla YAML:</p>
   <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restYAML}}</b></p>
   <p>
-  <p>Jak by wyglada content dla XML:</p>
+  <p>Jak by wyglądał by content dla XML:</p>
   <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restXML}}</b></p>
 
-  <p>Jak by wyglada content dla ZWYKEGO TEKSTU:</p>
+  <p>Jak by wyglądał by
+
+    content dla ZWYKEGO TEKSTU:</p>
   <p style="white-space: pre-line"><b style="color: #8a6d3b">{{restTEXT}}</b></p>
   <p style="color:red;font-weight: bold;font-size: 25px"> Wymuszenie przez SOAP formatu XML oraz określonych definicji w
     dokumencie powoduje narzut na przesyłane zapytanie. Dostępne dla REST formaty, takie jak JSON, czy YAML, mimo że

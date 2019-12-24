@@ -7,7 +7,34 @@ import {Component, OnInit} from '@angular/core';
 })
 export class FormatComponent implements OnInit {
 
-  soapXML = "curl -X POST http://localhost:8080/ws -H 'Content-Type: text/xml' -H 'SOAPAction: blz:getBank' -d ' <soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sch=\"https://www.praca_magister/soap_vs_rest/users.com\"> <soapenv:Header/> <soapenv:Body> <sch:AddUserRequest> <sch:firstname>tomek</sch:firstname> <sch:lastname>reda</sch:lastname> <sch:phoneNumber>123123123</sch:phoneNumber> <sch:password>password</sch:password> <sch:email>email@com.pl</sch:email> <sch:userRoles> <sch:id>1</sch:id> <sch:userRole>ADMIN</sch:userRole> </sch:userRoles> </sch:AddUserRequest> </soapenv:Body> </soapenv:Envelope>'";
+  soapXML = "curl -X POST http://localhost:8080/ws -H 'Content-Type: text/xml' -H 'SOAPAction: blz:getBank' -d '\n" +
+    "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sch=\"https://www.praca_magister/soap_vs_rest/users.com\">\n" +
+    "<soapenv:Header>\n" +
+    "<wsse:Security\n" +
+    "xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\"\n" +
+    "xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"\n" +
+    "soapenv:mustUnderstand=\"1\">\n" +
+    "<wsse:UsernameToken xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n" +
+    "<wsse:Username>admin</wsse:Username>\n" +
+    "<wsse:Password Type=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText\">secret</wsse:Password>\n" +
+    "</wsse:UsernameToken>\n" +
+    "<wsu:Timestamp xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n" +
+    "</wsu:Timestamp>\n" +
+    "</wsse:Security>\n" +
+    "</soapenv:Header> <soapenv:Body>\n" +
+    "<sch:AddUserRequest>\n" +
+    "<sch:firstname>tomek</sch:firstname>\n" +
+    "<sch:lastname>reda</sch:lastname>\n" +
+    "<sch:phoneNumber>123123123</sch:phoneNumber>\n" +
+    "<sch:password>password</sch:password>\n" +
+    "<sch:email>email@com.pl</sch:email>\n" +
+    "<sch:userRoles>\n" +
+    "<sch:id>1</sch:id>\n" +
+    "<sch:userRole>ADMIN</sch:userRole>\n" +
+    "</sch:userRoles>\n" +
+    "</sch:AddUserRequest>\n" +
+    "</soapenv:Body>\n" +
+    "</soapenv:Envelope>'"
   soapXMLUserCOnfig = "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:tns=\"https://www.praca_magister/soap_vs_rest/users.com\"\n" +
     "           targetNamespace=\"https://www.praca_magister/soap_vs_rest/users.com\" elementFormDefault=\"qualified\">\n" +
     "    \n" +
@@ -40,7 +67,20 @@ export class FormatComponent implements OnInit {
     "\n" +
     "</xs:schema>";
 
-  restJSON = "curl -d '{\"id\": \"\",\"firstname\": \"test\",\"lastname\": \"test\",\"email\": \"test0@op.pl\",\"phoneNumber\": 1231231,\"password\": \"GHJbnm123\",\"userRoles\": {\"id\": 1,\"userRole\": \"CASUAL_USER\"}}' -H 'Content-Type: application/json' localhost:8080/api/rest/user/add";
+  restJSON = "curl -d '\n" +
+    "{\"id\": \"\",\n" +
+    "\"firstname\": \"test\",\n" +
+    "\"lastname\": \"test\",\n" +
+    "\"email\": \"test0@op.pl\",\n" +
+    "\"phoneNumber\": 1231231,\n" +
+    "\"password\": \"GHJbnm123\",\n" +
+    "\"userRoles\": \n" +
+    "{\n" +
+    "\"id\": 1,\n" +
+    "\"userRole\": \"CASUAL_USER\"\n" +
+    "}\n" +
+    "}' " +
+    "-H 'Content-Type: application/json' localhost:8080/api/rest/user/add\n";
   restXML = "<div><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
     "<root>\n" +
     "   <Id />\n" +
