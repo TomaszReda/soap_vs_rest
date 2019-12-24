@@ -2,9 +2,25 @@
 <br/>
 <div class="container">
   <h1 class="text-center" style="font-size: 60px;font-weight: bold">8. Wydajnosc</h1>
-  <a class="nav-link" routerLink="/test" routerLinkActive="active" role="tab"
-     aria-controls="profile">Testy</a>
-  <p style="color:red;font-weight: bold;font-size: 25px"> </p>
+  <p>Wydajność to takie coś co mi zajeło najwięcej czasu i jeszcze nie wiem do końca jak to zrobić(zrobić lepiej oczywiście).
+  A mianowicie trzeba przetestować tą wydajność czyli np czas. Tylko na tych naszych endpointach tego nie zrobimy. Aktualnie moc obliczeniowa komputerów jest duża i przy tak
+  małych danych tego nie zauważymy.... To tak jakby sortować 100 danych... Wykona się to w ms.  Więc dlatego zrobiłem specialny obiekt 106 pól w tym 3 listy 3 odwołania na 3 obiektu i 100 normalnych pól stworzyłem generator do zapełniania go danymi. Np stringi 2 literami lub 10 lub 10000 w ten sposób powstaje mały duży bardzo duży lub ogromnyyyy plik który zawiera json/xml do testów.
+  Ten resultat umieszczam w tabelce (Jest do pod urlem tylko ten mój serwer ma 1g ramu to odpalenie go sposób wysadzecie serwerka....:(. Wiec nie bede podawał tego url by ktoś przypadkiem nie klinął.)
+  <img src="assets/wynik.png" width="100%"/>
+  <p>Ogolnie to przy duzych danych widac róznice tylko mój komputer jest na to jednak chyba za słaby. Można to przetestować np postmanem</p>
+
+  <p>Testujemy 2 warianty samo wysłanie danych metodą post</p>
+  <p>Rest: <img src="assets/restReceiv.png" /></p>
+  <p>Soap: <img src="assets/soapReceiv.png" /></p>
+  <p>Wysłanie danych i wzrócenie danych(Tutaj musialem zmniejszyc liczbe danych bo postman sie wylaczał)</p>
+  <p>Rest: <img src="assets/restSendOnly.png" /></p>
+  <p>Soap: <img src="assets/soapSendOnly.png" /></p>
+
+  <p>Problem przy testach jest taki ze wszystko zalezy od sprzetu jakim dysponujemy. Testy w zaleznosci od mocy obliczeniowej moga wyjsc inne. Myśle nad podpieciem czegoś do garbar collectora. On zajmuje sie przydzielaniem/zwalaniam pamieci w javie. Wiec podczas takich rzeczy pewnie dzieją sie tam ciekawe rzeczy.
+  Testy na czas + testy obciazenia jak wygladaja byłyby fajne. Tylko że z garbar collectorem to będzie sporo zabawy i nie wiadomo jak to się udana. Wiec narazie są te testy na czas a testy zuzycia pamieci zostaja na potem.
+  Testy bedą jeszcze rozwijane na pewno będę nam tym jeszcze siedział i coś probował podpiać zmienić dodać znalezc lepsze rozwiazanie.
+  </p>
+
 </div>
 
 
