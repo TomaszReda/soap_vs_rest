@@ -21,6 +21,7 @@ import { UseComponent } from './use/use.component';
 import { UtilizationComponent } from './utilization/utilization.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { OthersComponent } from './others/others.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {HttpClientModule} from "@angular/common/http";
     JavaapiComponent,
     SerwerComponent,
     UseComponent,
-    UtilizationComponent],
+    UtilizationComponent,
+    OthersComponent],
   imports: [
     BrowserModule,
     FormsModule,

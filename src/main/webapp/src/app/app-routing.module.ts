@@ -4,7 +4,6 @@ import {RouterModule, Routes} from "@angular/router";
 import {TestSoapComponent} from "./test-soap/test-soap.component";
 import {IntroductionComponent} from "./introduction/introduction.component";
 import {PerformanceComponent} from "./performance/performance.component";
-import {AppComponent} from "./app.component";
 import {StateComponent} from "./state/state.component";
 import {FormatComponent} from "./format/format.component";
 import {CacheComponent} from "./cache/cache.component";
@@ -18,6 +17,7 @@ import {JavaapiComponent} from "./javaapi/javaapi.component";
 import {SerwerComponent} from "./serwer/serwer.component";
 import {UtilizationComponent} from "./utilization/utilization.component";
 import {UseComponent} from "./use/use.component";
+import {OthersComponent} from "./others/others.component";
 
 const appRoutes: Routes = [
   {
@@ -63,6 +63,10 @@ const appRoutes: Routes = [
   {
     path: 'cache',
     component: CacheComponent
+  },
+  {
+    path: 'inne',
+    component: OthersComponent,
   },
   {
     path: 'protokol',
