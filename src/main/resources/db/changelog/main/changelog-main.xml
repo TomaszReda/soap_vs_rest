@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="20.02.23-create_table_book" author="0.0.1-SNAPSHOT">
+        <sqlFile path="db/changelog/main/20.02.23-create_table_book.sql"/>
+        <rollback>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_book_rollback.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="20.02.23-create_table_book_category" author="0.0.1-SNAPSHOT">
+        <sqlFile path="db/changelog/main/20.02.23-create_table_book_category.sql"/>
+        <rollback>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_book_category_rollback.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="20.02.23-create_table_book_book_category" author="0.0.1-SNAPSHOT">
+        <sqlFile path="db/changelog/main/20.02.23-create_table_book_book_category.sql"/>
+        <rollback>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_book_book_category_rollback.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="db/changelog/main/20.02.23-create_table_roles" author="0.0.1-SNAPSHOT">
+        <sqlFile path="db/changelog/main/20.02.23-create_table_roles.sql"/>
+        <rollback>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_roles_rollback.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="db/changelog/main/20.02.23-create_table_user" author="0.0.1-SNAPSHOT">
+        <sqlFile path="db/changelog/main/20.02.23-create_table_user.sql"/>
+        <rollback>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_user_rollback.sql"/>
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>
