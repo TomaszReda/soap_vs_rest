@@ -35,6 +35,12 @@ repositories {
     mavenCentral()
 }
 
+bootRun {
+    systemProperties = [
+            'spring.profiles.active': subprojects.propertyDrivenProfiles
+    ]
+}
+
 dependencies {
     compile("com.querydsl:querydsl-core:${queryDslVersion}")
     compile("com.querydsl:querydsl-jpa:${queryDslVersion}")
@@ -145,3 +151,4 @@ task copyAngular(type: Copy) {
     into "src/main/resources/static"
 }
 
+apply from: rootProject.file('gradle/profiles.gradle');

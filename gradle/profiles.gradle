@@ -1,0 +1,27 @@
+subprojects {
+    def prodProfiles = 'prod'
+    def devProfiles = 'dev'
+    def propertyDrivenProfiles
+
+    if (project.hasProperty('prod')) {
+        propertyDrivenProfiles = prodProfiles
+        apply from: rootProject.file('gradle/profile_prod.gradle')
+
+    } else {
+        propertyDrivenProfiles = devProfiles
+        apply from: rootProject.file('gradle/profile_dev.gradle')
+
+    }
+    println 'Using profile: "' + propertyDrivenProfiles + '" for ' + project.getName()
+    bootRun {
+        systemProperties = [
+                'spring.profiles.active': propertyDrivenProfiles
+        ]
+        ext.applyPropertyIfExists = { propertyKey ->
+            if (project.hasProperty(propertyKey)) {
+                systemProperties[propertyKey] = project.getProperty(propertyKey)
+            }
+        }
+        applyPropertyIfExists('spring.liquibase.contexts')
+    }
+}
