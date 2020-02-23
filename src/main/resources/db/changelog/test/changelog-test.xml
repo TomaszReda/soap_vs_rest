@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="20.02.24-create_data_book" author="0.0.1-SNAPSHOT">
+    <changeSet id="20.02.24-create_data_book" author="0.0.1-SNAPSHOT" context="test">
         <sqlFile path="db/changelog/test/20.02.24-create_data_book.sql"
                  endDelimiter="GO"
                  splitStatements="true"
@@ -17,7 +17,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="20.02.24-create_data_user_rollback" author="0.0.1-SNAPSHOT">
+    <changeSet id="20.02.24-create_data_user_rollback" author="0.0.1-SNAPSHOT" context="test">
         <sqlFile path="db/changelog/test/20.02.24-create_data_user.sql"
                  endDelimiter="GO"
                  splitStatements="true"
@@ -30,7 +30,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="20.02.24-create_data_book_book_category" author="0.0.1-SNAPSHOT">
+    <changeSet id="20.02.24-create_data_book_book_category" author="0.0.1-SNAPSHOT" context="test">
         <sqlFile path="db/changelog/test/20.02.24-create_data_book_book_category.sql"
                  endDelimiter="GO"
                  splitStatements="true"

@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="20.02.23-create_table_book" author="0.0.1-SNAPSHOT">
+    <changeSet id="20.02.23-create_table_book" author="0.0.1-SNAPSHOT" context="main">
         <sqlFile path="db/changelog/main/20.02.23-create_table_book.sql"
                  endDelimiter="GO"
                  splitStatements="true"
@@ -17,7 +17,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="20.02.23-create_table_book_category" author="0.0.1-SNAPSHOT">
+    <changeSet id="20.02.23-create_table_book_category" author="0.0.1-SNAPSHOT" context="main" >
         <sqlFile path="db/changelog/main/20.02.23-create_table_book_category.sql"
                  endDelimiter="GO"
                  splitStatements="true"
@@ -30,7 +30,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="20.02.23-create_table_book_book_category" author="0.0.1-SNAPSHOT">
+    <changeSet id="20.02.23-create_table_book_book_category" author="0.0.1-SNAPSHOT" context="main">
         <sqlFile path="db/changelog/main/20.02.23-create_table_book_book_category.sql"
                  endDelimiter="GO"
                  splitStatements="true"
@@ -43,7 +43,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="db/changelog/main/20.02.23-create_table_roles" author="0.0.1-SNAPSHOT">
+    <changeSet id="db/changelog/main/20.02.23-create_table_roles" author="0.0.1-SNAPSHOT" context="main">
         <sqlFile path="db/changelog/main/20.02.23-create_table_roles.sql"
                  endDelimiter="GO"
                  splitStatements="true"
@@ -56,7 +56,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="db/changelog/main/20.02.23-create_table_user" author="0.0.1-SNAPSHOT">
+    <changeSet id="db/changelog/main/20.02.23-create_table_user" author="0.0.1-SNAPSHOT" context="main">
         <sqlFile path="db/changelog/main/20.02.23-create_table_user.sql"
                  endDelimiter="GO"
                  splitStatements="true"
@@ -69,7 +69,7 @@
         </rollback>
     </changeSet>
 
-    <changeSet id="db/changelog/main/20.02.24-create_data_book_category" author="0.0.1-SNAPSHOT">
+    <changeSet id="db/changelog/main/20.02.24-create_data_book_category" author="0.0.1-SNAPSHOT" context="main">
         <sqlFile path="db/changelog/main/20.02.24-create_data_book_category.sql"
                  endDelimiter="GO"
                  splitStatements="true"
@@ -81,7 +81,7 @@
                      stripComments="true"/>
         </rollback>
     </changeSet>
-    <changeSet id="db/changelog/main/20.02.24-create_data_role" author="0.0.1-SNAPSHOT">
+    <changeSet id="db/changelog/main/20.02.24-create_data_role" author="0.0.1-SNAPSHOT" context="main">
         <sqlFile path="db/changelog/main/20.02.24-create_data_role.sql"
                  endDelimiter="GO"
                  splitStatements="true"
