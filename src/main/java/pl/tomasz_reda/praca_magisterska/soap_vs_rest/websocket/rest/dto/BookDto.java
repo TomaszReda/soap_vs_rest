@@ -28,7 +28,6 @@ public class BookDto {
 
     private int quant;
 
-    private String bookSearch;
 
     private String description;
 

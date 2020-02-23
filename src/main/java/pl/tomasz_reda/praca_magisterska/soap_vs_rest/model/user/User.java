@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.GenericGenerator;
 
 
+import javax.jdo.annotations.Unique;
 import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
@@ -30,7 +31,7 @@ public class User {
 
     private String email;
 
-    private int phoneNumber;
+    private String phoneNumber;
 
     private String password;
 

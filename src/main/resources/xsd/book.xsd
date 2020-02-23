@@ -18,7 +18,6 @@
                 <xs:element name="quant" type="xs:int"/>
                 <xs:element name="isbn" type="xs:string"/>
                 <xs:element name="data" type="xs:dateTime"/>
-                <xs:element name="bookSearch" type="xs:string"/>
                 <xs:element name="description" type="xs:string"/>
                 <xs:element name="bookState" type="tns:BookState"/>
                 <xs:element name="bookCategory" type="tns:BookCategory" minOccurs="0" maxOccurs="unbounded"/>
@@ -36,7 +35,6 @@
                 <xs:element name="quant" type="xs:int"/>
                 <xs:element name="isbn" type="xs:string"/>
                 <xs:element name="data" type="xs:date"/>
-                <xs:element name="bookSearch" type="xs:string"/>
                 <xs:element name="description" type="xs:string"/>
                 <xs:element name="bookState" type="tns:BookState"/>
                 <xs:element name="bookCategory" type="tns:BookCategory" minOccurs="0" maxOccurs="unbounded"/>
@@ -89,7 +87,6 @@
             <xs:element name="title" type="xs:string"/>
             <xs:element name="publisher" type="xs:string"/>
             <xs:element name="quant" type="xs:int"/>
-            <xs:element name="bookSearch" type="xs:string"/>
             <xs:element name="description" type="xs:string"/>
             <xs:element name="bookState" type="tns:BookState"/>
             <xs:element name="bookCategory" type="tns:BookCategory" minOccurs="0" maxOccurs="unbounded"/>

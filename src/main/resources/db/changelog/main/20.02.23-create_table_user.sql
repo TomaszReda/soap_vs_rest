@@ -5,7 +5,7 @@ CREATE TABLE public."user"
     firstname character varying(255) COLLATE pg_catalog."default",
     lastname character varying(255) COLLATE pg_catalog."default",
     password character varying(255) COLLATE pg_catalog."default",
-    phone_number integer NOT NULL,
+    phone_number varying(255) COLLATE pg_catalog."default",
     role_id bigint,
     CONSTRAINT user_pkey PRIMARY KEY (id),
     CONSTRAINT fksaqc2d3hlf8olow2f8vl4r6d9 FOREIGN KEY (role_id)

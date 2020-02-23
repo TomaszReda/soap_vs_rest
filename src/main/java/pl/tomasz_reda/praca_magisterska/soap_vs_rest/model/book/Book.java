@@ -34,8 +34,6 @@ public class Book {
 
     private int quant;
 
-    private String bookSearch;
-
     @Column(length = 4096)
     private String description;
 

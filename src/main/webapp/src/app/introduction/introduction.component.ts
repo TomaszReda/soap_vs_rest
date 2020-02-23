@@ -161,7 +161,6 @@ export class IntroductionComponent implements OnInit {
     '            \t<sch:title>Tytul</sch:title>\n' +
     '            \t<sch:publisher>Publikacja</sch:publisher>\n' +
     '            \t<sch:quant>4</sch:quant>\n' +
-    '            \t<sch:bookSearch>BOok search</sch:bookSearch>\n' +
     '            \t<sch:description>Description</sch:description>\n' +
     '            \t<sch:isbn>isbn</sch:isbn>\n' +
     '            \t<sch:data>2002-05-30T09:00:00</sch:data>\n' +
@@ -196,7 +195,6 @@ export class IntroductionComponent implements OnInit {
     '            \t<sch:title>Tytul</sch:title>\n' +
     '            \t<sch:publisher>Publikacja</sch:publisher>\n' +
     '            \t<sch:quant>4</sch:quant>\n' +
-    '            \t<sch:bookSearch>BOok search</sch:bookSearch>\n' +
     '            \t<sch:description>Description</sch:description>\n' +
     '            \t<sch:isbn>isbn</sch:isbn>\n' +
     '            \t<sch:data>2002-05-30T09:00:00</sch:data>\n' +

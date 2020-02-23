@@ -27,7 +27,6 @@ export class DataSizeComponent implements OnInit {
     '<sch:title>Tytul</sch:title>\n' +
     '<sch:publisher>Publikacja</sch:publisher>\n' +
     '<sch:quant>4</sch:quant>\n' +
-    '<sch:bookSearch>BOok search</sch:bookSearch>\n' +
     '<sch:description>Description</sch:description>\n' +
     '<sch:isbn>isbn</sch:isbn>\n' +
     '<sch:data>2002-05-30T09:00:00</sch:data>\n' +
@@ -48,7 +47,6 @@ export class DataSizeComponent implements OnInit {
     '"publisher": "publisher4",\n' +
     '"date": "2019-12-01","isbn": "isbn4",\n' +
     '"quant": 4,\n' +
-    '"bookSearch": "bookSearch4",\n' +
     '"description": "description4",\n' +
     '"bookState": "NOTRESERVED",\n' +
     '"bookCategory": [\n' +
