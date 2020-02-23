@@ -8,6 +8,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Model book for SOAP and REST . .
+ * @author Tomasz Reda
+ * */
 @Slf4j
 @Data
 @Entity

@@ -173,3 +173,10 @@ liquibase {
         }
     }
 }
+
+task generateRestApiDocs(type: Javadoc) {
+    source = sourceSets.main.allJava
+    destinationDir = reporting.file("rest-api-docs")
+    options.doclet = "/home/treda/IdeaProjects/soap_vs_rest/src/main/java/pl/tomasz_reda/praca_magisterska/soap_vs_rest"
+    options.addStringOption("jaxrscontext", "http://localhost:8080/myapp")
+}

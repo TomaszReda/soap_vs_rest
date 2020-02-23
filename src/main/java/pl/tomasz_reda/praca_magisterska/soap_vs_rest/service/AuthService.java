@@ -1,6 +1,5 @@
 package pl.tomasz_reda.praca_magisterska.soap_vs_rest.service;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,25 +7,21 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.UserRepository;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Service
 @Slf4j
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AuthService {
 
-    private final AuthenticationManager authenticationManager;
+    @Autowired
+    private  AuthenticationManager authenticationManager;
 
-    private final UserRepository userRepository;
 
-    private final PasswordEncoder passwordEncoder;
 
 
     public ResponseEntity<AuthenticationResponse> login(@RequestBody Credentials credentials, HttpServletRequest request) {

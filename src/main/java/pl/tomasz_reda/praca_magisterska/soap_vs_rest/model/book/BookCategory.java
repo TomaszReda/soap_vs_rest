@@ -6,6 +6,10 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Model BookCategory for SOAP and REST . .
+ * @author Tomasz Reda
+ * */
 @Entity
 @Getter
 @Setter

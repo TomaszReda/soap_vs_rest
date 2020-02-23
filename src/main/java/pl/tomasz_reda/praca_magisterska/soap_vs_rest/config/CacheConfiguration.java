@@ -18,6 +18,10 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Configuration cache to rest . .
+ * @author Tomasz Reda
+ * */
 @EnableCaching
 @Configuration
 public class CacheConfiguration implements CachingConfigurer {

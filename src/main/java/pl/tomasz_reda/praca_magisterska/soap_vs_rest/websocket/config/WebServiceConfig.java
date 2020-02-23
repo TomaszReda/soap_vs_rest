@@ -19,6 +19,10 @@ import org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * Configuration SOAP . .
+ * @author Tomasz Reda
+ * */
 @EnableWs
 @Configuration
 public class WebServiceConfig extends WsConfigurerAdapter {

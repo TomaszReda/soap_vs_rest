@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Model user role for SOAP and REST . .
+ * @author Tomasz Reda
+ * */
 @Entity
 @Getter
 @Setter

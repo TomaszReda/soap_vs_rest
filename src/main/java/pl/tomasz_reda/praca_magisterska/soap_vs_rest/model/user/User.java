@@ -10,6 +10,10 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Model user for SOAP and REST . .
+ * @author Tomasz Reda
+ * */
 @Slf4j
 @Data
 @Entity
