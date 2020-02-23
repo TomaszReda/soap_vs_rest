@@ -1,5 +1,5 @@
 DELETE FROM public."user" where email='test@op.pl' and firstname='test' and lastname='test' and password='GHJbnm123';
-DELETE FROM public."user" where email='test@op.pl' and firstname='test' and lastname='test' and password='123123123';
+DELETE FROM public."user" where email='test12@op.pl' and firstname='test' and lastname='test' and password='123123123';
 DELETE FROM public."user" where email='test10@op.pl' and firstname='Rafał' and lastname='Jaźwiński' and password='nienienie';
 DELETE FROM public."user" where email='test44@op.pl' and firstname='Urszula' and lastname='Hirsz' and password='asdacxzc1';
 DELETE FROM public."user" where email='testowy@op.pl' and firstname='Aleksandra' and lastname='Kalicki' and password='asdsadad';
@@ -14,7 +14,7 @@ DELETE FROM public."user" where email='test12@op.pl' and firstname='Zbigniew' an
 DELETE FROM public."user" where email='test20@op.pl' and firstname='Henryk' and lastname='Nowowiejski' and password='123ccsad32';
 DELETE FROM public."user" where email='test23@op.pl' and firstname='Stefania' and lastname='Chlebowski' and password='sadasczm21';
 DELETE FROM public."user" where email='test46@op.pl' and firstname='Maciej' and lastname='Faber' and password='nienienie';
-DELETE FROM public."user" where email='test@op.pl' and firstname='Renata' and lastname='Ferens' and password='dfgderrw';
+DELETE FROM public."user" where email='test12@op.pl' and firstname='Renata' and lastname='Ferens' and password='dfgderrw';
 DELETE FROM public."user" where email='test16@op.pl' and firstname='Małgorzata' and lastname='Jeziorowski' and password='zxczczxcasd';
 DELETE FROM public."user" where email='test33@op.pl' and firstname='Adam' and lastname='Zamorski' and password='asdsaxczmn1';
 DELETE FROM public."user" where email='emailik@op.pl' and firstname='Łukasz' and lastname='Gronek' and password='asdsadad';
@@ -44,7 +44,7 @@ DELETE FROM public."user" where email='test13@op.pl' and firstname='Michał' and
 DELETE FROM public."user" where email='test34@op.pl' and firstname='Zbigniew' and lastname='Czekała' and password='2321231';
 DELETE FROM public."user" where email='slodkimojjedyny@op.pl' and firstname='Jola' and lastname='Nowowiejski' and password='walidacja';
 DELETE FROM public."user" where email='slodkiadamek@op.pl' and firstname='Genowefa' and lastname='Kusy' and password='nienienie';
-DELETE FROM public."user" where email='test@op.pl' and firstname='Ewelina' and lastname='Staniszewski' and password='123ccsad32';
+DELETE FROM public."user" where email='test12@op.pl' and firstname='Ewelina' and lastname='Staniszewski' and password='123ccsad32';
 DELETE FROM public."user" where email='test6@op.pl' and firstname='Karolina' and lastname='Szołtysek' and password='fhghnvbngf';
 DELETE FROM public."user" where email='bieszcady1920@op.pl' and firstname='Anna' and lastname='Wacławek' and password='sadasczm21';
 DELETE FROM public."user" where email='wybierzmnie@op.pl' and firstname='Bożena' and lastname='Łyszczarz' and password='walidacja';
@@ -164,7 +164,7 @@ DELETE FROM public."user" where email='test44@op.pl' and firstname='Danuta' and 
 DELETE FROM public."user" where email='test29@op.pl' and firstname='Tomasz' and lastname='Prusaczyk' and password='zxczczxcasd';
 DELETE FROM public."user" where email='test5@op.pl' and firstname='Ewelina' and lastname='Krawczak' and password='nienienie';
 DELETE FROM public."user" where email='test11@op.pl' and firstname='Ada' and lastname='Pytel' and password='2321231';
-DELETE FROM public."user" where email='test@op.pl' and firstname='Marianna' and lastname='Bryś' and password='2321231';
+DELETE FROM public."user" where email='test12@op.pl' and firstname='Marianna' and lastname='Bryś' and password='2321231';
 DELETE FROM public."user" where email='test8@op.pl' and firstname='Jan' and lastname='Talaśka' and password='123ccsad32';
 DELETE FROM public."user" where email='costamTest@op.pl' and firstname='Ryszard' and lastname='Tatara' and password='dfgderrw';
 DELETE FROM public."user" where email='test0@op.pl' and firstname='Czesław' and lastname='Sobecki' and password='costam1';

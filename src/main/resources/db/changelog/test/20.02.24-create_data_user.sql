@@ -13,7 +13,7 @@ INSERT INTO public."user"( email, firstname, lastname, password, phone_number, r
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test20@op.pl', 'Henryk', 'Nowowiejski', '123ccsad32', '4346802317', '1');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test23@op.pl', 'Stefania', 'Chlebowski', 'sadasczm21', '3735235019', '2');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test46@op.pl', 'Maciej', 'Faber', 'nienienie', '461232558', '2');
-INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test@op.pl', 'Renata', 'Ferens', 'dfgderrw', '2165674301', '2');
+INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test12@op.pl', 'Renata', 'Ferens', 'dfgderrw', '2165674301', '2');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test16@op.pl', 'Małgorzata', 'Jeziorowski', 'zxczczxcasd', '5325759462', '1');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test33@op.pl', 'Adam', 'Zamorski', 'asdsaxczmn1', '2251181657', '1');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'emailik@op.pl', 'Łukasz', 'Gronek', 'asdsadad', '5345155987', '2');
@@ -43,7 +43,7 @@ INSERT INTO public."user"( email, firstname, lastname, password, phone_number, r
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test34@op.pl', 'Zbigniew', 'Czekała', '2321231', '2720951587', '2');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'slodkimojjedyny@op.pl', 'Jola', 'Nowowiejski', 'walidacja', '7530416712', '1');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'slodkiadamek@op.pl', 'Genowefa', 'Kusy', 'nienienie', '6154509008', '1');
-INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test@op.pl', 'Ewelina', 'Staniszewski', '123ccsad32', '3703898700', '1');
+INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test12@op.pl', 'Ewelina', 'Staniszewski', '123ccsad32', '3703898700', '1');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test6@op.pl', 'Karolina', 'Szołtysek', 'fhghnvbngf', '1203449313', '2');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'bieszcady1920@op.pl', 'Anna', 'Wacławek', 'sadasczm21', '634458098', '1');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'wybierzmnie@op.pl', 'Bożena', 'Łyszczarz', 'walidacja', '6573429116', '2');
@@ -163,7 +163,7 @@ INSERT INTO public."user"( email, firstname, lastname, password, phone_number, r
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test29@op.pl', 'Tomasz', 'Prusaczyk', 'zxczczxcasd', '752529350', '2');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test5@op.pl', 'Ewelina', 'Krawczak', 'nienienie', '4437296695', '1');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test11@op.pl', 'Ada', 'Pytel', '2321231', '7211238957', '2');
-INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test@op.pl', 'Marianna', 'Bryś', '2321231', '3504454732', '2');
+INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test12@op.pl', 'Marianna', 'Bryś', '2321231', '3504454732', '2');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test8@op.pl', 'Jan', 'Talaśka', '123ccsad32', '5212507416', '1');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'costamTest@op.pl', 'Ryszard', 'Tatara', 'dfgderrw', '2256314755', '2');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id)VALUES ( 'test0@op.pl', 'Czesław', 'Sobecki', 'costam1', '4202181961', '2');
