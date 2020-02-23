@@ -16,3 +16,6 @@ Aplikacja posiada dwa profile prod i dev
 application.yml
 spring.profile.active=prod
 tutaj ustawiamy na prod albo dev
+
+#Actuator
+http://localhost:8080/actuator/health
