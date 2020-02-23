@@ -45,24 +45,25 @@ public class TestingData implements CommandLineRunner {
 
         BookCategory bookCat = null;
         for (String bookCategory : bookCategories) {
+            System.err.println("INSERT INTO public.book_category(category_type) VALUES(\'"+bookCategory+"\');");
             bookCat = new BookCategory();
             bookCat.setCategoryType(bookCategory);
             bookCategoryRepository.save(bookCat);
         }
-        User user = null;
-        user = new User(null, "test", "test", "test@op.pl", 1231231, "test", userRoles);
-        userRepository.save(user);
-        Book book = null;
-        List<BookCategory> bookCategories = new ArrayList<>();
-        bookCategories.add(bookCategoryRepository.findAll().get(0));
-        for (int i = 0; i < 100; i++) {
-            Random random = new Random();
-            int number = random.nextInt(10);
-            user = new User(null, "test" + number, "test" + number, "test" + number + "@op.pl", 1231231, "GHJbnm123", userRoles);
-            userRepository.save(user);
-            book = new Book(null, "author" + number, "title" + number, "publisher" + number, LocalDate.now(), "isbn" + number, 4, "bookSearch" + number, "description" + number, BookState.NOTRESERVED, bookCategories);
-            bookRepository.save(book);
-        }
+//        User user = null;
+//        user = new User(null, "test", "test", "test@op.pl", 1231231, "test", userRoles);
+//        userRepository.save(user);
+//        Book book = null;
+//        List<BookCategory> bookCategories = new ArrayList<>();
+//        bookCategories.add(bookCategoryRepository.findAll().get(0));
+//        for (int i = 0; i < 100; i++) {
+//            Random random = new Random();
+//            int number = random.nextInt(10);
+//            user = new User(null, "test" + number, "test" + number, "test" + number + "@op.pl", 1231231, "GHJbnm123", userRoles);
+//            userRepository.save(user);
+//            book = new Book(null, "author" + number, "title" + number, "publisher" + number, LocalDate.now(), "isbn" + number, 4, "bookSearch" + number, "description" + number, BookState.NOTRESERVED, bookCategories);
+//            bookRepository.save(book);
+//        }
 
     }
 

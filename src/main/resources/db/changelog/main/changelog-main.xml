@@ -5,39 +5,107 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="20.02.23-create_table_book" author="0.0.1-SNAPSHOT">
-        <sqlFile path="db/changelog/main/20.02.23-create_table_book.sql"/>
+        <sqlFile path="db/changelog/main/20.02.23-create_table_book.sql"
+                 endDelimiter="GO"
+                 splitStatements="true"
+                 stripComments="true"/>
         <rollback>
-            <sqlFile path="db/changelog/main/20.02.23-create_table_book_rollback.sql"/>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_book_rollback.sql"
+                     endDelimiter="GO"
+                     splitStatements="true"
+                     stripComments="true"/>
         </rollback>
     </changeSet>
 
     <changeSet id="20.02.23-create_table_book_category" author="0.0.1-SNAPSHOT">
-        <sqlFile path="db/changelog/main/20.02.23-create_table_book_category.sql"/>
+        <sqlFile path="db/changelog/main/20.02.23-create_table_book_category.sql"
+                 endDelimiter="GO"
+                 splitStatements="true"
+                 stripComments="true"/>
         <rollback>
-            <sqlFile path="db/changelog/main/20.02.23-create_table_book_category_rollback.sql"/>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_book_category_rollback.sql"
+                     endDelimiter="GO"
+                     splitStatements="true"
+                     stripComments="true"/>
         </rollback>
     </changeSet>
 
     <changeSet id="20.02.23-create_table_book_book_category" author="0.0.1-SNAPSHOT">
-        <sqlFile path="db/changelog/main/20.02.23-create_table_book_book_category.sql"/>
+        <sqlFile path="db/changelog/main/20.02.23-create_table_book_book_category.sql"
+                 endDelimiter="GO"
+                 splitStatements="true"
+                 stripComments="true"/>
         <rollback>
-            <sqlFile path="db/changelog/main/20.02.23-create_table_book_book_category_rollback.sql"/>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_book_book_category_rollback.sql"
+                     endDelimiter="GO"
+                     splitStatements="true"
+                     stripComments="true"/>
         </rollback>
     </changeSet>
 
     <changeSet id="db/changelog/main/20.02.23-create_table_roles" author="0.0.1-SNAPSHOT">
-        <sqlFile path="db/changelog/main/20.02.23-create_table_roles.sql"/>
+        <sqlFile path="db/changelog/main/20.02.23-create_table_roles.sql"
+                 endDelimiter="GO"
+                 splitStatements="true"
+                 stripComments="true"/>
         <rollback>
-            <sqlFile path="db/changelog/main/20.02.23-create_table_roles_rollback.sql"/>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_roles_rollback.sql"
+                     endDelimiter="GO"
+                     splitStatements="true"
+                     stripComments="true"/>
         </rollback>
     </changeSet>
 
     <changeSet id="db/changelog/main/20.02.23-create_table_user" author="0.0.1-SNAPSHOT">
-        <sqlFile path="db/changelog/main/20.02.23-create_table_user.sql"/>
+        <sqlFile path="db/changelog/main/20.02.23-create_table_user.sql"
+                 endDelimiter="GO"
+                 splitStatements="true"
+                 stripComments="true"/>
         <rollback>
-            <sqlFile path="db/changelog/main/20.02.23-create_table_user_rollback.sql"/>
+            <sqlFile path="db/changelog/main/20.02.23-create_table_user_rollback.sql"
+                     endDelimiter="GO"
+                     splitStatements="true"
+                     stripComments="true"/>
         </rollback>
     </changeSet>
 
+    <changeSet id="db/changelog/main/20.02.24-create_data_book_category" author="0.0.1-SNAPSHOT">
+        <sqlFile path="db/changelog/main/20.02.24-create_data_book_category.sql"
+                 endDelimiter="GO"
+                 splitStatements="true"
+                 stripComments="true"/>
+        <rollback>
+            <sqlFile path="db/changelog/main/20.02.24-create_data_book_category_rollback.sql"
+                     endDelimiter="GO"
+                     splitStatements="true"
+                     stripComments="true"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="" author="0.0.1-SNAPSHOT">
+        <sqlFile path=""
+                 endDelimiter="GO"
+                 splitStatements="true"
+                 stripComments="true"/>
+        <rollback>
+            <sqlFile path=""
+                     endDelimiter="GO"
+                     splitStatements="true"
+                     stripComments="true"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="db/changelog/main/20.02.24-create_data_role" author="0.0.1-SNAPSHOT">
+        <sqlFile path="db/changelog/main/20.02.24-create_data_role.sql"
+                 endDelimiter="GO"
+                 splitStatements="true"
+                 stripComments="true"/>
+        <rollback>
+            <sqlFile path="db/changelog/main/20.02.24-create_role_data_rollback.sql"
+                     endDelimiter="GO"
+                     splitStatements="true"
+                     stripComments="true"/>
+        </rollback>
+    </changeSet>
 
 </databaseChangeLog>
