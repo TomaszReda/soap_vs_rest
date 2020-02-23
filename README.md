@@ -5,3 +5,9 @@
 
 #Uruchomienie samej bazy
 docker-compose up -d postgres
+
+
+
+#Rollback liquibase
+gradle rollbackCount  -PliquibaseCommandValue=5
+Gdzie 5 to ilosc cofniec
