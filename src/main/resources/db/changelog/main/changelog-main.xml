@@ -81,20 +81,6 @@
                      stripComments="true"/>
         </rollback>
     </changeSet>
-
-    <changeSet id="" author="0.0.1-SNAPSHOT">
-        <sqlFile path=""
-                 endDelimiter="GO"
-                 splitStatements="true"
-                 stripComments="true"/>
-        <rollback>
-            <sqlFile path=""
-                     endDelimiter="GO"
-                     splitStatements="true"
-                     stripComments="true"/>
-        </rollback>
-    </changeSet>
-
     <changeSet id="db/changelog/main/20.02.24-create_data_role" author="0.0.1-SNAPSHOT">
         <sqlFile path="db/changelog/main/20.02.24-create_data_role.sql"
                  endDelimiter="GO"

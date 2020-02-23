@@ -1,11 +1,10 @@
-
-INSERT INTO public.book_category(category_type) VALUES('Fantasy');
-INSERT INTO public.book_category(category_type) VALUES('Biografie/Autobiografie');
-INSERT INTO public.book_category(category_type) VALUES('Młodzieżowa');
-INSERT INTO public.book_category(category_type) VALUES('Naukowa');
-INSERT INTO public.book_category(category_type) VALUES('Sportowa');
-INSERT INTO public.book_category(category_type) VALUES('Bajka');
-INSERT INTO public.book_category(category_type) VALUES('Historyczna');
-INSERT INTO public.book_category(category_type) VALUES('Horror');
-INSERT INTO public.book_category(category_type) VALUES('Przygodowa');
-INSERT INTO public.book_category(category_type) VALUES('Inna');
+DELETE FROM public.book_category where category_type='Fantasy';
+DELETE FROM public.book_category where category_type='Biografie/Autobiografie';
+DELETE FROM public.book_category where category_type='Młodzieżowa';
+DELETE FROM public.book_category where category_type='Naukowa';
+DELETE FROM public.book_category where category_type='Sportowa';
+DELETE FROM public.book_category where category_type='Bajka';
+DELETE FROM public.book_category where category_type='Historyczna';
+DELETE FROM public.book_category where category_type='Horror';
+DELETE FROM public.book_category where category_type='Przygodowa';
+DELETE FROM public.book_category where category_type='Inna';
