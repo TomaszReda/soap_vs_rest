@@ -1,4 +1,4 @@
-package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.config.security;
+package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
