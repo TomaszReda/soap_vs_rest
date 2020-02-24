@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.service.AuthService;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.service.AuthenticationResponse;
-import pl.tomasz_reda.praca_magisterska.soap_vs_rest.service.Credentials;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.service.AuthService;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.service.AuthenticationResponse;
+import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.service.Credentials;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
