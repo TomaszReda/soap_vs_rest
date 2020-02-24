@@ -1,6 +1,5 @@
-package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.config;
+package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.soap.config;
 
-import org.apache.ws.security.handler.WSHandlerConstants;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
