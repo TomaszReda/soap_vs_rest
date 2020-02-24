@@ -93,5 +93,17 @@
                      stripComments="true"/>
         </rollback>
     </changeSet>
+    <changeSet id="db/changelog/main/20.02.24-create_table_session" author="0.0.1-SNAPSHOT" context="main">
+        <sqlFile path="db/changelog/main/20.02.24-create_table_session.sql"
+                 endDelimiter="GO"
+                 splitStatements="true"
+                 stripComments="true"/>
+        <rollback>
+            <sqlFile path="db/changelog/main/20.02-24-create_table_session_rollback.sql"
+                     endDelimiter="GO"
+                     splitStatements="true"
+                     stripComments="true"/>
+        </rollback>
+    </changeSet>
 
 </databaseChangeLog>
