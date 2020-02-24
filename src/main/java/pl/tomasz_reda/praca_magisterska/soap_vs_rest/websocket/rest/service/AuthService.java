@@ -1,4 +1,4 @@
-package pl.tomasz_reda.praca_magisterska.soap_vs_rest.service;
+package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
