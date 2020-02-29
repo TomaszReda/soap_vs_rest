@@ -23,3 +23,7 @@ http://localhost:8080/actuator/health
 
 #Garbal collector
 /usr/bin/jconsole
+
+
+#jmetter
+/Downloads/apache-jmeter-5.2.1/bin$ ./jmeter
