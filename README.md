@@ -19,3 +19,7 @@ tutaj ustawiamy na prod albo dev
 
 #Actuator
 http://localhost:8080/actuator/health
+
+
+#Garbal collector
+/usr/bin/jconsole
