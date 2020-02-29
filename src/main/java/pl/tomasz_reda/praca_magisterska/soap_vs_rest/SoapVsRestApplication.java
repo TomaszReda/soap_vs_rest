@@ -14,18 +14,19 @@ import java.util.Random;
 public class SoapVsRestApplication {
 
     public static void main(String[] args) throws Exception {
-//        genereateSoap("TestRequestSendOnly");
-//        genereateSoap("TestRequestSendAndReceivRequest");
-//        generateRest();
+        int czynnik=300000;
+        System.err.println("1");
+        genereateSoap("TestRequestSendOnly",czynnik);
+        System.err.println("2");
+        genereateSoap("TestRequestSendAndReceivRequest",czynnik);
+        System.err.println("3");
+        generateRest(czynnik);
 
         SpringApplication.run(SoapVsRestApplication.class, args);
     }
 
-    private static int czynnik() {
-        return 100000;
-    }
 
-    private static void genereateSoap(String name) {
+    private static void genereateSoap(String name,int czynnik) {
         String json = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sch=\"https://www.praca_magister/soap_vs_rest/test.com\">\n" +
                 "<soapenv:Header>\n" +
                 "  <wsse:Security \n" +
@@ -44,7 +45,7 @@ public class SoapVsRestApplication {
                 "<sch:" + name + ">" +
                 "<sch:testObjectMain>";
         String constText = "";
-        for (int i = 0; i < czynnik(); i++) {
+        for (int i = 0; i < czynnik; i++) {
             constText += " a";
         }
         for (int i = 1; i <= 100; i++) {
@@ -59,7 +60,7 @@ public class SoapVsRestApplication {
         }
 
         String testObjectTekst = "";
-        for (int i = 0; i < czynnik(); i++) {
+        for (int i = 0; i < czynnik; i++) {
             testObjectTekst += "a ";
         }
         for (int i = 1; i <= 2; i++) {
@@ -102,12 +103,12 @@ public class SoapVsRestApplication {
 
     }
 
-    private static void generateRest() {
+    private static void generateRest(int czynnik) {
         String json = "";
         json += "{\n";
         String constText = "";
         Random random = new Random();
-        for (int i = 0; i < czynnik(); i++) {
+        for (int i = 0; i < czynnik; i++) {
             constText += " a";
         }
         for (int i = 1; i <= 100; i++) {
@@ -128,7 +129,7 @@ public class SoapVsRestApplication {
         }
 
         String testObjectTekst = "";
-        for (int i = 0; i < czynnik(); i++) {
+        for (int i = 0; i < czynnik; i++) {
             testObjectTekst += "a ";
         }
         for (int i = 1; i <= 2; i++) {
