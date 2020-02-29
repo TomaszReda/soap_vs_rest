@@ -13,12 +13,16 @@
 
 
 
-<form (ngSubmit)="onSubmit()" >
+<form >
   <label for="number2">Liczba od(1-5000):</label>
 
   <input [(ngModel)]="number2" type="number"  id="number2"  name="number2"  min="1" max="5000" [min]="1" [max]="5000" maxlength="5" [maxLength]="5"
   /><br/>
-  <button type="submit" >Rozpocznij testy</button>
+  <button style="margin-left: 20px" (click)="onSubmitTestSoapOnlySend()" >Rozpocznij testy SOAP ONLY SEND</button>
+  <button style="margin-left: 20px" (click)="onSubmitTestRestOnlySend()" type="submit" >Rozpocznij testy REST ONLY SEND</button>
+  <button style="margin-left: 20px" type="submit" (click)="onSubmitTestSOAPFunctionSendAndReceiv()" >Rozpocznij testy SOAP SEND AND RECIVE</button>
+  <button style="margin-left: 20px" type="submit"  (click)="onSubmitTestRestFunctionSendAndReceiv()">Rozpocznij testy REST SEND AND RECIVE </button>
+
 </form>
 </div>
 <table class="table table-dark table-bordered">
