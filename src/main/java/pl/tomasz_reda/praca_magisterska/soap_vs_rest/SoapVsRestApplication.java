@@ -14,14 +14,12 @@ import java.util.Random;
 public class SoapVsRestApplication {
 
     public static void main(String[] args) throws Exception {
-        int czynnik=300000;
-        System.err.println("1");
-        genereateSoap("TestRequestSendOnly",czynnik);
-        System.err.println("2");
-        genereateSoap("TestRequestSendAndReceivRequest",czynnik);
-        System.err.println("3");
-        generateRest(czynnik);
-
+        int czynnik=0;
+        if(czynnik!=0) {
+            genereateSoap("TestRequestSendOnly", czynnik);
+            genereateSoap("TestRequestSendAndReceivRequest", czynnik);
+            generateRest(czynnik);
+        }
         SpringApplication.run(SoapVsRestApplication.class, args);
     }
 
