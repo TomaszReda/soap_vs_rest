@@ -13,7 +13,7 @@
   </wsse:Security>
 </soapenv:Header>
 <soapenv:Body>
-<sch:100TestRequestSendOnly><sch:testObjectMain><sch:field1> a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</sch:field1>
+<sch:TestRequestSendOnly><sch:testObjectMain><sch:field1> a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</sch:field1>
 <sch:field2> a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</sch:field2>
 <sch:field3> a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</sch:field3>
 <sch:field4> a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</sch:field4>
@@ -205,6 +205,6 @@
 </sch:testOtherObject2>
 </sch:testObjectMain>
 
-</sch:100TestRequestSendOnly>
+</sch:TestRequestSendOnly>
 </soapenv:Body>
 </soapenv:Envelope>

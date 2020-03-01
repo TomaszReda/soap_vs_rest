@@ -13,7 +13,7 @@
   </wsse:Security>
 </soapenv:Header>
 <soapenv:Body>
-<sch:1TestRequestSendAndReceivRequest><sch:testObjectMain><sch:field1> a</sch:field1>
+<sch:TestRequestSendAndReceivRequest><sch:testObjectMain><sch:field1> a</sch:field1>
 <sch:field2> a</sch:field2>
 <sch:field3> a</sch:field3>
 <sch:field4> a</sch:field4>
@@ -205,6 +205,6 @@
 </sch:testOtherObject2>
 </sch:testObjectMain>
 
-</sch:1TestRequestSendAndReceivRequest>
+</sch:TestRequestSendAndReceivRequest>
 </soapenv:Body>
 </soapenv:Envelope>

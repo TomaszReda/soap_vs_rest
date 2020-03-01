@@ -16,12 +16,12 @@ import java.util.Random;
 public class SoapVsRestApplication {
 
     public static void main(String[] args) throws Exception {
-//        List<Integer> czynniki = Arrays.asList(1, 10, 100, 1000, 10000);
-        List<Integer> czynniki = Arrays.asList(0);
+        List<Integer> czynniki = Arrays.asList(1, 10, 100, 1000, 10000);
+//        List<Integer> czynniki = Arrays.asList(0);
         for (int c : czynniki) {
             if (c != 0) {
-                genereateSoap(c + "TestRequestSendOnly", "body_send_soap/", c);
-                genereateSoap(c + "TestRequestSendAndReceivRequest", "body_send_and_receive_soap/", c);
+                genereateSoap("TestRequestSendOnly", c + "TestRequestSendOnly", "body_send_soap/", c);
+                genereateSoap("TestRequestSendAndReceivRequest", c + "TestRequestSendAndReceivRequest", "body_send_and_receive_soap/", c);
                 generateRest(c);
             }
         }
@@ -29,7 +29,7 @@ public class SoapVsRestApplication {
     }
 
 
-    private static void genereateSoap(String name, String body, int czynnik) {
+    private static void genereateSoap(String nameRequest, String nameFile, String body, int czynnik) {
         String json = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sch=\"https://www.praca_magister/soap_vs_rest/test.com\">\n" +
                 "<soapenv:Header>\n" +
                 "  <wsse:Security \n" +
@@ -45,7 +45,7 @@ public class SoapVsRestApplication {
                 "  </wsse:Security>\n" +
                 "</soapenv:Header>\n" +
                 "<soapenv:Body>\n" +
-                "<sch:" + name + ">" +
+                "<sch:" + nameRequest + ">" +
                 "<sch:testObjectMain>";
         String constText = "";
         for (int i = 0; i < czynnik; i++) {
@@ -83,12 +83,12 @@ public class SoapVsRestApplication {
 
         }
         json += "</sch:testObjectMain>\n";
-        json += "\n</sch:" + name + ">\n" +
+        json += "\n</sch:" + nameRequest + ">\n" +
                 "</soapenv:Body>\n" +
                 "</soapenv:Envelope>";
 
 
-        String yourfilename = "./src/main/webapp/src/assets/" + body + name + "SOAP.txt";
+        String yourfilename = "./src/main/webapp/src/assets/" + body + nameFile + "SOAP.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));
