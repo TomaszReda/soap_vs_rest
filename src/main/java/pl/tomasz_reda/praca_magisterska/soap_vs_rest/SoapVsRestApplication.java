@@ -7,6 +7,8 @@ import org.springframework.cache.annotation.EnableCaching;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 @SpringBootApplication
@@ -14,17 +16,20 @@ import java.util.Random;
 public class SoapVsRestApplication {
 
     public static void main(String[] args) throws Exception {
-        int czynnik=0;
-        if(czynnik!=0) {
-            genereateSoap("TestRequestSendOnly", czynnik);
-            genereateSoap("TestRequestSendAndReceivRequest", czynnik);
-            generateRest(czynnik);
+//        List<Integer> czynniki = Arrays.asList(1, 10, 100, 1000, 10000);
+        List<Integer> czynniki = Arrays.asList(0);
+        for (int c : czynniki) {
+            if (c != 0) {
+                genereateSoap(c + "TestRequestSendOnly", "body_send_soap/", c);
+                genereateSoap(c + "TestRequestSendAndReceivRequest", "body_send_and_receive_soap/", c);
+                generateRest(c);
+            }
         }
         SpringApplication.run(SoapVsRestApplication.class, args);
     }
 
 
-    private static void genereateSoap(String name,int czynnik) {
+    private static void genereateSoap(String name, String body, int czynnik) {
         String json = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:sch=\"https://www.praca_magister/soap_vs_rest/test.com\">\n" +
                 "<soapenv:Header>\n" +
                 "  <wsse:Security \n" +
@@ -83,7 +88,7 @@ public class SoapVsRestApplication {
                 "</soapenv:Envelope>";
 
 
-        String yourfilename = "./src/main/webapp/src/assets/" + name + "SOAP.txt";
+        String yourfilename = "./src/main/webapp/src/assets/" + body + name + "SOAP.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));
@@ -155,7 +160,7 @@ public class SoapVsRestApplication {
         json += "\n}";
 
 
-        String yourfilename = "./src/main/webapp/src/assets/" + "testREST.txt";
+        String yourfilename = "./src/main/webapp/src/assets/body_rest/" + czynnik + "testREST.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));
