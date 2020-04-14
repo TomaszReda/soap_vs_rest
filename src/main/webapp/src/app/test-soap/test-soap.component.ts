@@ -135,7 +135,7 @@ export class TestSoapComponent implements OnInit {
       }).subscribe(x => {
         const dataAfter = new Date();
         const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000;
-        this.addTestDataOnlySendSoap += dif;
+        this.addTestDataOnlySendSoap = dif;
       });
     }
 
@@ -160,7 +160,7 @@ export class TestSoapComponent implements OnInit {
       }).subscribe(x => {
         const dataAfter = new Date();
         const dif = (dataAfter.getTime() - dataBefore.getTime()) / 1000;
-        this.addTestDataOnlySendAndReceivSoap += dif;
+        this.addTestDataOnlySendAndReceivSoap = dif;
       });
     }
 
