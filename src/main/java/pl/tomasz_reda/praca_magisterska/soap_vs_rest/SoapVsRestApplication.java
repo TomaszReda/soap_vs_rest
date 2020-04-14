@@ -19,6 +19,7 @@ public class SoapVsRestApplication {
         List<Integer> czynniki = Arrays.asList(1, 10, 100, 1000, 10000);
 //        List<Integer> czynniki = Arrays.asList(0);
         for (int c : czynniki) {
+            System.err.println(c);
             if (c != 0) {
                 genereateSoap("TestRequestSendOnly", c + "TestRequestSendOnly", "body_send_soap/", c);
                 genereateSoap("TestRequestSendAndReceivRequest", c + "TestRequestSendAndReceivRequest", "body_send_and_receive_soap/", c);
@@ -88,7 +89,7 @@ public class SoapVsRestApplication {
                 "</soapenv:Envelope>";
 
 
-        String yourfilename = "./src/main/webapp/src/assets/" + body + nameFile + "SOAP.txt";
+        String yourfilename = "./jmeter/" + body + nameFile + "SOAP.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));
@@ -160,7 +161,7 @@ public class SoapVsRestApplication {
         json += "\n}";
 
 
-        String yourfilename = "./src/main/webapp/src/assets/body_rest/" + czynnik + "testREST.txt";
+        String yourfilename = "./jmeter/body_rest/" + czynnik + "testREST.txt";
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(yourfilename));
