@@ -16,8 +16,8 @@ import java.util.Random;
 public class SoapVsRestApplication {
 
     public static void main(String[] args) throws Exception {
-        List<Integer> czynniki = Arrays.asList(1, 10, 100, 1000, 10000,25000,50000,100000);
-//        List<Integer> czynniki = Arrays.asList(0);
+//        List<Integer> czynniki = Arrays.asList(1, 10, 100, 1000, 10000,25000,50000,100000);
+        List<Integer> czynniki = Arrays.asList(0);
         for (int c : czynniki) {
             System.err.println(c);
             if (c != 0) {
