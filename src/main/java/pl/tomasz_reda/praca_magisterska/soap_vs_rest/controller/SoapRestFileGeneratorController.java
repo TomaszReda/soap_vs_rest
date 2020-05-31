@@ -21,7 +21,7 @@ public class SoapRestFileGeneratorController {
     public String generateFile() {
         List<Integer> czynniki = Arrays.asList(1, 10, 100, 1000, 10000, 25000, 50000, 100000);
         for (int c : czynniki) {
-            log.info("czynnik:" + czynniki);
+            log.info("czynnik:" + c);
             if (c != 0) {
                 genereateSoap("TestRequestSendOnly", c + "TestRequestSendOnly", "body_send_soap/", c);
                 genereateSoap("TestRequestSendAndReceivRequest", c + "TestRequestSendAndReceivRequest", "body_send_and_receive_soap/", c);

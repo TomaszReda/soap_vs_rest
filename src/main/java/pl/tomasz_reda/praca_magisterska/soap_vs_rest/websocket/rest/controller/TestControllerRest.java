@@ -1,10 +1,7 @@
 package pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.repository.UserRepository;
 import pl.tomasz_reda.praca_magisterska.soap_vs_rest.websocket.rest.dto.TestDto;
 
@@ -31,4 +28,5 @@ public class TestControllerRest {
     @PostMapping("/test/send-only")
     public void test2(@RequestBody TestDto testDto) {
     }
+
 }
