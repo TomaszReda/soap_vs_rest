@@ -27,3 +27,6 @@ http://localhost:8080/actuator/health
 
 #jmetter
 wersja apache-jmeter-5.2.1
+
+#Inne informacje
+Odpalaj aplikacje na dockerze mamy po krótce wgląd do tego co zostało zrobione
