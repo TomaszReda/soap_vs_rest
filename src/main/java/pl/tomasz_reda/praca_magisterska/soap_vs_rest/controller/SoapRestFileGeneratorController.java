@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -18,6 +19,7 @@ import java.util.Random;
 public class SoapRestFileGeneratorController {
 
     @GetMapping
+    @ResponseBody
     public String generateFile() {
         List<Integer> czynniki = Arrays.asList(1, 10, 100, 1000, 10000, 25000, 50000, 100000);
         for (int c : czynniki) {
