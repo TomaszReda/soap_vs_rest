@@ -1,4 +1,4 @@
-INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id) SELECT ('test@op.pl'),( 'test'),('test'),( 'GHJbnm123'),( '123123123'),('2'),(select id from roles where user_role='ADMIN');
+INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id) SELECT ('test@op.pl'),( 'test'),('test'),( 'GHJbnm123'),( '123123123'),(select id from roles where user_role='ADMIN');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id) SELECT  ( 'test10@op.pl'),( 'Rafał'),( 'Jaźwiński'),( 'nienienie'),( '3650854387'),(select id from roles where user_role='CASUAL_USER');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id) SELECT  ( 'test44@op.pl'),( 'Urszula'),( 'Hirsz'),( 'asdacxzc1'),( '3613822234'),(select id from roles where user_role='ADMIN');
 INSERT INTO public."user"( email, firstname, lastname, password, phone_number, role_id) SELECT  ( 'testowy@op.pl'),( 'Aleksandra'),( 'Kalicki'),( 'asdsadad'),( '5151097572'),(select id from roles where user_role='ADMIN');
