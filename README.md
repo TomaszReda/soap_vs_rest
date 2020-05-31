@@ -12,7 +12,7 @@ Gdzie 5 to ilosc cofniec
 
 
 #Profile
-Aplikacja posiada dwa profile prod i dev
+Aplikacja posiada dwa profile prod i dev(prod czysta baza danych , dev baza danych z przykładowymi rekordami)
 application.yml
 spring.profile.active=prod
 tutaj ustawiamy na prod albo dev
@@ -22,8 +22,8 @@ http://localhost:8080/actuator/health
 
 
 #Garbal collector
-/usr/bin/jconsole
+/usr/bin/jconsole(linux)
 
 
 #jmetter
-/Downloads/apache-jmeter-5.2.1/bin$ ./jmeter
+wersja apache-jmeter-5.2.1
