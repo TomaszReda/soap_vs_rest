@@ -3,8 +3,12 @@
 2. Budujemy obrazy dockera docker-compose build
 3. Uruchamiamy obraz <b>docker compose up -d </b>
 
+
 #Uruchomienie samej bazy
 docker-compose up -d postgres
+
+#uruchomienie liquida
+gradle updateSQL
 
 #Rollback liquibase
 gradle rollbackCount  -PliquibaseCommandValue=5
@@ -20,7 +24,6 @@ tutaj ustawiamy na prod albo dev
 #Actuator
 http://localhost:8080/actuator/health
 
-
 #Garbal collector
 /usr/bin/jconsole(linux)
 
@@ -30,3 +33,4 @@ wersja apache-jmeter-5.2.1
 
 #Inne informacje
 Odpalaj aplikacje na dockerze mamy po krótce wgląd do tego co zostało zrobione
+Developersko odpalamy aplikacje z intellija z profile dev. Przed tym nalezy odpalic liquibase na bazie.
