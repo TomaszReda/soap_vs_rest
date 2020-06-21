@@ -1,3 +1,8 @@
+#Potrzeba
+- java w wersji 1.8
+- docker
+- Angular w wersji 6-7
+
 #Docker
 1. Budujemy aplikacje celem bootJar
 2. Budujemy obrazy dockera docker-compose build
