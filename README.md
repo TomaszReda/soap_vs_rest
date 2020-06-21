@@ -31,6 +31,10 @@ http://localhost:8080/actuator/health
 #jmetter
 wersja apache-jmeter-5.2.1
 
+#jmeter
+Generacja danych do jmetera
+GET /api/generateTestFile
+
 #Inne informacje
 Odpalaj aplikacje na dockerze mamy po krótce wgląd do tego co zostało zrobione
 Developersko odpalamy aplikacje z intellija z profile dev. Przed tym nalezy odpalic liquibase na bazie.
